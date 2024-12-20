@@ -1,0 +1,1063 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deposit Page</title>
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css"
+    />
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end -->
+    <style>
+      .red_bg_blur {
+        background: #161616 !important;
+        height: 100vh;
+      }
+      .red_bg_blur::before {
+        content: "";
+        background: hsl(346, 100%, 50%);
+        filter: blur(110px);
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        top: -100px;
+        left: -100px;
+        z-index: -1;
+      }
+      .tab_red_active.nav-pills .nav-link.active {
+        background: linear-gradient(103deg, #a71515 4.36%, #dc3545 111.5%);
+        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
+          7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+        color: white;
+      }
+
+      .br-grey {
+        border: 1px solid #bebdbd9c;
+      }
+      .red-gradient {
+        background: linear-gradient(103deg, #a71515 4.36%, #e4063b 111.5%);
+        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
+          7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+      }
+      .green-bg {
+        background-color: #3dac08;
+      }
+      .green2-bg {
+        background-color: #0f8d4b;
+      }
+
+      /* form style starts */
+      .account_input-textbox-container .form-control {
+        border-radius: 7px;
+        border-width: 1px;
+        background-color: transparent !important;
+        height: 35px;
+        padding: 5px;
+        border-color: #808080f5;
+      }
+      .account_input-textbox-container .form-label {
+        font-size: 15px;
+      }
+      .account_input-textbox-container input::placeholder {
+        color: rgb(132, 130, 130) !important;
+        font-size: 15px;
+      }
+
+      /* Form Style Ends */
+      /* {
+        background: #ffffff33;
+        border: 1px solid #dcdcdc99;
+      } */
+      .nav-link.btn-color {
+        background: #ffffff33;
+        border: 1px solid #dcdcdc99;
+      }
+      .recharge-amount-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .recharge-amount-container button {
+        background: 0 0;
+        border: 1px solid #e4063ace;
+        color: #fff;
+        transition: 0.5s;
+        border-radius: 0;
+      }
+      .recharge-amount-container button:hover {
+        border: 1px solid #e4063ace;
+        color: #fff;
+        background: linear-gradient(103deg, #a71515 4.36%, #e4063b 111.5%);
+        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
+          7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .grey_transparent_button {
+        background: #ffffff33;
+        border: 1px solid #dcdcdc99;
+      }
+      .w-150 {
+        width: 170px;
+      }
+      .green-border {
+        border: 1px solid #31d937;
+      }
+      .bg_light_grey {
+        background-color: #323738b3 !important;
+      }
+      /* /Form Style starts */
+
+      .form-control_container .input-field {
+        position: relative;
+        width: 100%;
+      }
+
+      .form-control_container .input {
+        margin-top: 15px;
+        width: 100%;
+        outline: none;
+        border-radius: 8px;
+        height: 45px;
+        border: 1.5px solid #ecedec;
+        background: transparent;
+        padding-left: 10px;
+      }
+      .form-control_container .input:focus {
+        border: 1.5px solid #e4063b;
+      }
+      .form-control_container .input-field .label {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        color: #ccc;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .form-control_container .input-field .input:focus ~ .label,
+      .form-control_container .input-field .input:valid ~ .label {
+        top: 5px;
+        left: 5px;
+        font-size: 12px;
+        color: #ffffff;
+        background-color: #161616;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      /* /Form Style ends */
+
+      button.nav-link.btn-color.text-white {
+        width: 47% !important;
+        height: 40px;
+        border-radius: 22px;
+        padding: 0 5px;
+      }
+
+      .custom-file-input {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px !important;
+        width: 100%;
+        border: 1px solid #ffffff87;
+        border-radius: 6px;
+      }
+
+      .custom-file-input label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .custom-file-input .btn {
+        background-color: #e4063b;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .custom-file-input .btn:hover {
+        background-color: #161616;
+      }
+
+      .custom-file-input .file-name {
+        font-size: 14px;
+        color: #fff;
+      }
+
+      /* Hide the default file input */
+      .custom-file-input input[type="file"] {
+        display: none;
+      }
+      .Edit_bank_pop_up .btn-close {
+        background: #dddddd var(--bs-btn-close-bg) center / 1em auto no-repeat;
+        /* filter: invert(1); */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header-part -->
+    <header class="bgbody-color">
+      <nav class="navbar fixed-top h-56">
+        <div class="container-fluid p-0">
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <div class="logo_brand">
+              <a class="navbar-brand m-0" href="#"
+                ><img src="../img/logo.png" alt="" srcset="" width="100%"
+              /></a>
+            </div>
+
+            <div class="d-flex mx-2">
+              <div class="user-icon">
+                <img
+                  src="../img/icons/man.png"
+                  alt=""
+                  srcset=""
+                  class="w-100"
+                  style="border-radius: 50%"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- hedaer-end -->
+    <section class="container vh-100">
+      <div class="h-100">
+        <!-- ======================================================================= -->
+        <!-- 2 button starts -->
+        <!-- <div class="d-flex justify-content-between px-3 mt-4 " style="margin-top: 80px;">
+          <a href="#">
+            <button
+              class="btn btn-color text-white red-gradient py-2 px-3"
+              type="button"
+            >
+              <img
+                src="../img/icons/icons8-deposit-64.png"
+                alt=""
+                width="30px"
+              />
+              Deposit
+            </button>
+          </a>
+          <a href="./withdrawal.html">
+            <button
+              class="btn btn-color text-white grey_transparent_button py-2 px-3"
+              type="button"
+            >
+              <img
+                src="../img/icons/icons8-withdrawal-48.png"
+                alt=""
+                width="22px"
+              />
+              Withdrawal
+            </button>
+          </a>
+        </div> -->
+        <!-- 2 button Ends -->
+        <!-- Header 2 buttons Starts -->
+        <div class="pt-3 pb-2" style="margin-top: 80px">
+          <div class="container-fluid p-0">
+            <h5 class="mb-3">Select Payment Method</h5>
+            <nav
+              class="nav nav-pills d-flex justify-content-between tab_red_active"
+            >
+              <button
+                class="nav-link btn-color text-white active w-150"
+                id="upi-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Bank_details"
+                type="button"
+                role="tab"
+                aria-controls="Bank_details"
+                aria-selected="true"
+              >
+                <img src="../img/icons/add_account.png" alt="" width="22px" />
+                Bank Details
+              </button>
+              <button
+                class="nav-link btn-color text-white w-150"
+                id="profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#profile"
+                type="button"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+              >
+                <img src="../img/icons/add_account.png" alt="" width="22px" />
+                Add Bank
+              </button>
+            </nav>
+
+            <div class="tab-content mt-3" id="myTabContent">
+              <!-- tab 1 -->
+              <div
+                class="tab-pane fade show active"
+                id="Bank_details"
+                role="tabpanel"
+                aria-labelledby="upi-tab"
+              >
+                <!-- Select Amount Starts -->
+
+                <div
+                  class="card bg_light_grey account_input-textbox-container mt-3"
+                >
+                  <div
+                    class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                  >
+                    <h5 class="text-center mb-0">Select Amount</h5>
+                  </div>
+                  <div class="card-body">
+                    <form class="form-control_container" action="">
+                      <div class="input-field mb-3">
+                        <input required="" class="input" type="number" />
+                        <label class="label" for="input"
+                          >Enter the Amount</label
+                        >
+                      </div>
+
+                      <div class="recharge-amount-container button">
+                        <button type="button" class="btn">10</button>
+                        <button type="button" class="btn">20</button>
+                        <button type="button" class="btn">50</button>
+                        <button type="button" class="btn">100</button>
+                        <button type="button" class="btn">1000</button>
+                        <button type="button" class="btn">10000</button>
+                        <button type="button" class="btn">100</button>
+                        <button type="button" class="btn">1000</button>
+                        <button type="button" class="btn">10000</button>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button
+                          type="button"
+                          class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                        >
+                          Sumbit
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Select Amount Ends -->
+                <!-- card 1 Starts -->
+                <div
+                  class="card bg_light_grey br-grey account_input-textbox-container my-3"
+                >
+                  <!-- <div
+                    class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                  >
+                    <h5 class="text-center mb-0">Added Bank Details</h5>
+                  </div> -->
+                  <div class="card-body p-2">
+                    <!--  Details Starts -->
+                    <div class="">
+                      <!-- card 1 Starts -->
+                      <div
+                        class="d-flex justify-content-between border rounded mt-2 py-2 px-2"
+                      >
+                        <div class="d-flex">
+                          <!-- input icon starts -->
+                          <div class="px-2 py-1">
+                            <div class="form-check px-3">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                          </div>
+                          <!-- bank Details Starts -->
+                          <div>
+                            <div>
+                              <p class="mb-0 text-grey">Bank Name</p>
+                              <h6>Indian Bank</h6>
+                            </div>
+                            <div>
+                              <p class="mb-0 text-grey">A/c Name</p>
+                              <h6>Jibooma</h6>
+                            </div>
+                            <div>
+                              <p class="mb-0 text-grey">A/c No</p>
+                              <h6>XXXXXXXXXXXX907</h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="">
+                          <!-- <i class="ri-edit-box-fill fs-1 text-blue"></i> -->
+                          <i
+                            class="ri-file-edit-line fs-1 text-white"
+                            data-bs-toggle="modal"
+                            data-bs-target="#Edit_bank_pop_up"
+                          ></i>
+                          <i
+                            class="ri-delete-bin-6-fill fs-1 text-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_pop_up"
+                          ></i>
+                        </div>
+                      </div>
+
+                      <!-- card 1 ends -->
+                      <div
+                        class="d-flex justify-content-between border rounded mt-2 py-2 px-2"
+                      >
+                        <div class="d-flex">
+                          <!-- input icon starts -->
+                          <div class="px-2 py-1">
+                            <div class="form-check px-3">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                              />
+                            </div>
+                          </div>
+                          <!-- bank Details Starts -->
+                          <div>
+                            <div>
+                              <p class="mb-0 text-grey">Bank Name</p>
+                              <h6>Indian Bank</h6>
+                            </div>
+                            <div>
+                              <p class="mb-0 text-grey">A/c Name</p>
+                              <h6>Jibooma</h6>
+                            </div>
+                            <div>
+                              <p class="mb-0 text-grey">A/c No</p>
+                              <h6>XXXXXXXXXXXX907</h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="">
+                          <!-- <i class="ri-edit-box-fill fs-1 text-blue"></i> -->
+                          <i
+                            class="ri-file-edit-line fs-1 text-white"
+                            data-bs-toggle="modal"
+                            data-bs-target="#Edit_bank_pop_up"
+                          ></i>
+                          <i
+                            class="ri-delete-bin-6-fill fs-1 text-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_pop_up"
+                          ></i>
+                        </div>
+                      </div>
+                      <!-- card 1 Starts -->
+                    </div>
+                    <!--  Details ends -->
+
+                    <div class="d-flex justify-content-center">
+                      <button
+                        type="button"
+                        class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                      >
+                        Processed
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 1 Ends -->
+
+                <!-- card 3 Starts -->
+                <div
+                  class="card bg-transparent account_input-textbox-container mt-3"
+                  style="margin-bottom: 100px"
+                >
+                  <div
+                    class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                  >
+                    <h5 class="text-center mb-0">Rules</h5>
+                  </div>
+                  <div class="card-body" style="border: 1px solid white">
+                    <ul class="list-unstyled">
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        The amount will be deposited to your account intantly
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- card 3 Starts -->
+              </div>
+
+              <!-- tab 2 -->
+              <div
+                class="tab-pane fade"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <!-- card 2-->
+                <div class="card bg_light_grey account_input-textbox-container">
+                  <div
+                    class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                  >
+                    <h5 class="text-center mb-0">Bank Details</h5>
+                  </div>
+                  <div class="card-body">
+                    <form class="form-control_container" action="">
+                      <select
+                        class="form-select mb-3"
+                        aria-label="Default select example"
+                        style="
+                          background: #202223;
+                          color: #cecdc8;
+                          height: 42px;
+                        "
+                      >
+                        <option selected>Select Bank Name</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <div class="input-field mb-3">
+                        <input required="" class="input" type="text" />
+                        <label class="label" for="input">A/C Name</label>
+                      </div>
+
+                      <div class="input-field mb-3">
+                        <input required="" class="input" type="number" />
+                        <label class="label" for="input">A/C No</label>
+                      </div>
+
+                      <div class="input-field mb-3">
+                        <input required="" class="input" type="number" />
+                        <label class="label" for="input">IFSC</label>
+                      </div>
+
+                      <div class="d-flex justify-content-center">
+                        <button
+                          type="button"
+                          class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                        >
+                          Add
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- card 2-->
+                <!-- card 3 Starts -->
+                <div
+                  class="card bg-transparent account_input-textbox-container mt-3"
+                >
+                  <div
+                    class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                  >
+                    <h5 class="text-center mb-0">Rules</h5>
+                  </div>
+                  <div class="card-body" style="border: 1px solid white">
+                    <ul class="list-unstyled">
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        The amount will be deposited to your account intantly
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                      <li class="text-white fs-14 mb-2">
+                        <img src="../img/icons/tick.png" alt="" width="20px" />
+                        Transfer the amount through our safe payment gateway
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- card 3 Starts -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header  Ends -->
+      </div>
+    </section>
+
+    <div class="unique-footer" style="bottom: 0px">
+      <ul>
+        <li
+          id="unique-home"
+          class="footer-item"
+          onclick="activateFooterItem('unique-home')"
+        >
+          <a href="./index.html">
+            <img
+              src="../img/footer/home (3).png"
+              alt=""
+              srcset=""
+              width="27px"
+            />
+            <p class="mb-0">Home</p>
+          </a>
+        </li>
+
+        <li
+          id="unique-games"
+          class="footer-item"
+          onclick="activateFooterItem('unique-games')"
+        >
+          <a href="./Allgames.html">
+            <img
+              src="../img/footer/search_1.png"
+              alt=""
+              srcset=""
+              width="27px"
+            />
+            <p class="mb-0">Search</p>
+          </a>
+        </li>
+
+        <li
+          id="unique-games"
+          class="footer-item"
+          onclick="activateFooterItem('unique-games')"
+        >
+          <a href="./Allgames.html">
+            <img
+              src="../img/footer/game (1).png"
+              alt=""
+              srcset=""
+              width="27px"
+            />
+            <p class="mb-0">Games</p>
+          </a>
+        </li>
+        <li
+          id="unique-games"
+          class="footer-item"
+          onclick="activateFooterItem('unique-games')"
+        >
+          <a href="./Allgames.html">
+            <img
+              src="../img/footer/casino_1.png"
+              alt=""
+              srcset=""
+              width="27px"
+            />
+            <p class="mb-0">Casino</p>
+          </a>
+        </li>
+        <li
+          id="unique-settings"
+          class="footer-item"
+          onclick="activateFooterItem('unique-settings')"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <img src="../img/footer/app.png" alt="" srcset="" width="27px" />
+          <p class="mb-0">Menu</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!---menu off-canva-->
+    <div
+      class="offcanvas offcanvas_bg offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header d-flex justify-content-between">
+        <h5
+          class="offcanvas-title fs-24 mx-2"
+          id="offcanvasWithBothOptionsLabel"
+        >
+          Menu
+        </h5>
+        <button
+          type="button"
+          class="btn off_canvas_close_btn me-1 bg-white rounded"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <i class="ri-close-large-line text-white fs-17"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex align-items-center menu_list_item">
+          <div class="">
+            <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24" />
+          </div>
+          <span class="mx-3 text-white">Home</span>
+        </div>
+        <div class="d-flex align-items-center menu_list_item">
+          <div class="">
+            <img src="../img/SIDEMENU/club.png" alt="" srcset="" width="24" />
+          </div>
+          <span class="mx-3 text-white">All Games</span>
+        </div>
+
+        <!----accordion---->
+        <div class="accordion accordion_sec" id="accordionExample">
+          <div class="accordion-item game_title_accordion_item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed game_title_btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                <img
+                  src="../img/SIDEMENU/chart-mixed-up-circle-dollar.png"
+                  alt=""
+                  srcset=""
+                  width="24"
+                />
+                <span class="mx-3 text-white">Trending Game</span>
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body game_items_accordion">
+                <div
+                  class="d-flex align-items-center game_items_accordion_list"
+                >
+                  <div class="">
+                    <i class="ri-gamepad-line text-white"></i>
+                  </div>
+                  <span class="mx-3 text-white">Casino 1</span>
+                </div>
+              </div>
+              <div class="accordion-body game_items_accordion">
+                <div
+                  class="d-flex align-items-center game_items_accordion_list"
+                >
+                  <div class="">
+                    <i class="ri-gamepad-line text-white"></i>
+                  </div>
+                  <span class="mx-3 text-white">Casino 2</span>
+                </div>
+              </div>
+              <div class="accordion-body game_items_accordion">
+                <div
+                  class="d-flex align-items-center game_items_accordion_list"
+                >
+                  <div class="">
+                    <i class="ri-gamepad-line text-white"></i>
+                  </div>
+                  <span class="mx-3 text-white">Casino 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!----accordion end---->
+        <div class="menu">
+          <!-- Main -->
+          <div class="d-flex align-items-center menu_list_item">
+            <div>
+              <img
+                src="../img/SIDEMENU/mode-portrait.png"
+                alt=""
+                srcset=""
+                width="24"
+              /><!-- Icon for "Main" -->
+            </div>
+            <span class="mx-3 text-white">How to Play</span>
+          </div>
+
+          <!-- LIVE -->
+          <div class="d-flex align-items-center menu_list_item">
+            <div>
+              <img
+                src="../img/SIDEMENU/deposit.png"
+                alt=""
+                srcset=""
+                width="24"
+              /><!-- Icon for "LIVE" -->
+            </div>
+             <span class="mx-3 text-white">Term & Condition</span>
+          </div>
+
+          <!-- Sports -->
+          <div class="d-flex align-items-center menu_list_item">
+            <div>
+              <img
+                src="../img/SIDEMENU/money-from-bracket.png"
+                alt=""
+                srcset=""
+                width="24"
+              />
+              <!-- Existing "Sports" Icon -->
+            </div>
+             <span class="mx-3 text-white">Privacy Policy</span>
+          </div>
+
+          <!-- Cricket -->
+          <div class="d-flex align-items-center menu_list_item">
+            <div>
+              <img
+                src="../img/SIDEMENU/settings.png"
+                alt=""
+                srcset=""
+                width="24"
+              /><!-- Icon for "Cricket" -->
+            </div>
+            <span class="mx-3 text-white">Settings</span>
+          </div>
+
+          <div class="d-flex align-items-center menu_list_item">
+            <div>
+              <img
+                src="../img/SIDEMENU/address-card.png"
+                alt=""
+                srcset=""
+                width="24"
+              /><!-- Icon for "Cricket" -->
+            </div>
+            <span class="mx-3 text-white">Logout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---menu off-canva end-->
+
+    <!-- Edit Bank Details POP-UP Starts -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="Edit_bank_pop_up"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered Edit_bank_pop_up">
+        <div class="modal-content" style="background-color: #232323">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5 py-2" id="exampleModalLabel">
+              Edit Bank Details
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="card account_input-textbox-container">
+              <!-- <div
+                class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+              >
+                <h5 class="text-center mb-0">Bank Details</h5>
+              </div> -->
+              <div class="card-body">
+                <form class="form-control_container" action="">
+                  <select
+                    class="form-select mb-3"
+                    aria-label="Default select example"
+                    style="background: #202223; color: #cecdc8; height: 42px"
+                  >
+                    <option selected="">Select Bank Name</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <div class="input-field mb-3">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">A/C Name</label>
+                  </div>
+
+                  <div class="input-field mb-3">
+                    <input required="" class="input" type="number" />
+                    <label class="label" for="input">A/C No</label>
+                  </div>
+
+                  <div class="input-field mb-3">
+                    <input required="" class="input" type="number" />
+                    <label class="label" for="input">IFSC</label>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      type="button"
+                      class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Add Bank Details POP-UP Ends -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="payment"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-sm justify-content-center"
+      >
+        <div class="modal-content" style="width: 220px">
+          <div class="modal-body d-flex flex-column align-items-center">
+            <img src="../img/icons/rupee.gif" class="mb-2 w-75" />
+            <div class="fw-700 fs-13 text-center text-black mb-3">
+              Your Request <br />
+              Is In Our Queue!
+            </div>
+            <span class="btn text-white green-bg">Thank You</span>
+            <span class="text-dard-grey fs-10 fw-700 mt-3"
+              >For Choosing jiboomba</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete POP-UP starts -->
+    <div
+      class="modal fade"
+      id="delete_pop_up"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content" style="width: 85%">
+          <div class="modal-body d-flex flex-column align-items-center py-5">
+            <img src="../img/icons/warning.gif" class="mb-2" width="64px" />
+            <div class="fw-700 text-center text-black mb-3 fs-2">
+              Are You Sure?
+            </div>
+            <p class="text-dark text-center fs-15">
+              Do you really want to delete this records? This process cannot be
+              undone.
+            </p>
+            <!-- <span class="btn text-white green-bg">Thank You</span>
+            <span class="text-dard-grey fs-10 fw-700 mt-3"
+              >For Choosing jiboomba</span
+            > -->
+            <div class="d-flex gap-2 mt-2">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_pop_up_2"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete POP-UP Ends -->
+    <!-- Delete POP-UP starts -->
+    <div
+      class="modal fade"
+      id="delete_pop_up_2"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-sm justify-content-center"
+      >
+        <div class="modal-content py-3" style="width: 300px">
+          <div class="modal-body d-flex flex-column align-items-center">
+            <img src="../img/icons/tick_2.gif" class="mb-2" width="60px" />
+            <div class="fw-700 fs-15 text-center text-black my-3">
+              Your data has been Deleted <br />Successfully!
+            </div>
+            <div class="d-flex gap-2 mt-2">
+              <button
+                type="button"
+                class="btn green2-bg text-white"
+                data-bs-dismiss="modal"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete POP-UP Ends -->
+    <!-- js part -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+    <!-- js part end -->
+
+    <script>
+      document
+        .getElementById("formFile")
+        .addEventListener("change", function () {
+          const fileName = this.files[0]?.name || "No file chosen";
+          this.nextElementSibling.querySelector(".file-name").textContent =
+            fileName;
+        });
+    </script>
+  </body>
+</html>

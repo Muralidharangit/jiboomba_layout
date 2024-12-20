@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enter OTP</title>
+
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end -->
+  </head>
+  <body>
+    <section class="container">
+      <div class="pt-3 pb-2">
+        <div class="logo d-flex justify-content-center mb-2">
+          <img src="../img/fav.png" alt class="" width="75%">
+        </div>
+
+        <div class="p-3">
+          <div class="py-4">
+            <div class="section-head">
+              <h3 class="title">Enter OTP</h3>
+              <p class="text-white">
+                A 4-digit code has been sent to your email. Enter it below to verify.
+              </p>
+            </div>
+          </div>
+
+          <div class="form">
+            <div class="otp-form">
+              <form class="">
+                <div class="d-flex justify-content-center mb-4 otp-page">
+                  <input
+                    type="text"
+                    class="form-control text-center otp-box"
+                    maxlength="1"
+                    id="otp1"
+                    oninput="moveToNext(this, 'otp2')"
+                  />
+                  <input
+                    type="text"
+                    class="form-control text-center otp-box"
+                    maxlength="1"
+                    id="otp2"
+                    oninput="moveToNext(this, 'otp3')"
+                  />
+                  <input
+                    type="text"
+                    class="form-control text-center otp-box"
+                    maxlength="1"
+                    id="otp3"
+                    oninput="moveToNext(this, 'otp4')"
+                  />
+                  <input
+                    type="text"
+                    class="form-control text-center otp-box"
+                    maxlength="1"
+                    id="otp4"
+                    oninput="moveToNext(this)"
+                  />
+                </div>
+                <div>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn btn-login w-100 my-3"
+                      onclick="window.location.href='./Enternewpass.html'"
+                    >
+                      Verify <i class="ri-check-line text-white fs-20"></i>
+                    </button>
+                  </div>
+                </div>
+              
+              </form>
+            </div>
+
+            <div class="text-center">
+              <p class="text-white">
+                Didn't receive the OTP? <a href="#" class="text-red fw-600">Resend OTP</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- js part -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+      // Autofocus on OTP inputs and move to next
+      const otpInputs = document.querySelectorAll('.otp-box');
+      otpInputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+          const value = e.target.value;
+          if (value.length === 1 && index < otpInputs.length - 1) {
+            otpInputs[index + 1].focus();
+          }
+          if (value.length === 0 && index > 0) {
+            otpInputs[index - 1].focus();
+          }
+        });
+      });
+    </script> -->
+    <script>
+      // Function to move to the next input field
+      function moveToNext(current, nextId) {
+        if (current.value.length === current.maxLength && nextId) {
+          document.getElementById(nextId).focus();
+        }
+      }
+    
+      // Paste handling
+      document.querySelector('.otp-page').addEventListener('paste', function (event) {
+        const pasteData = event.clipboardData.getData('text');
+        const otpInputs = document.querySelectorAll('.otp-box');
+    
+        if (pasteData.length === otpInputs.length) {
+          otpInputs.forEach((input, index) => {
+            input.value = pasteData[index] || ''; // Set each box with a respective digit
+          });
+          otpInputs[otpInputs.length - 1].focus(); // Focus last input
+        }
+        event.preventDefault();
+      });
+    </script>
+    <!-- js part end -->
+  </body>
+</html>

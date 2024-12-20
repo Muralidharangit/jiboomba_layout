@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enter New Password</title>
+
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end -->
+  </head>
+  <body>
+    <section class="container">
+      <div class="pt-3 pb-2">
+        <div class="logo d-flex justify-content-center mb-2">
+          <img src="../img/fav.png" alt class="" width="75%">
+        </div>
+
+        <div class="p-3">
+          <div class="py-4">
+            <div class="section-head">
+              <h3 class="title">Enter New Password</h3>
+              <p class="text-white">
+                Create a strong password to secure your account.
+              </p>
+            </div>
+          </div>
+
+          <div class="form">
+            <div class="new-password-form">
+              <form action="./Enternewpass.html" method="get">
+                <!-- New Password -->
+                <div class="input-groups mb-4 position-relative">
+                  <label for="newPassword" class="form-label text-white">New Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="newPassword"
+                    aria-describedby="passwordToggle1"
+                    required
+                  />
+                  <i
+                    class="ri-eye-off-line position-absolute top-50 translate-middle-y end-0 pe-3 text-white"
+                    id="toggleNewPassword"
+                    style="font-size: 1.5rem; cursor: pointer;"
+                  ></i>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-groups mb-4 position-relative">
+                  <label for="confirmPassword" class="form-label text-white">Confirm Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    aria-describedby="passwordToggle2"
+                    required
+                  />
+                  <i
+                    class="ri-eye-off-line position-absolute top-50 translate-middle-y end-0 pe-3 text-white"
+                    id="toggleConfirmPassword"
+                    style="font-size: 1.5rem; cursor: pointer;"
+                  ></i>
+                </div>
+
+                <a href="./index.html">
+                <button type="button" class="btn btn-login w-100 my-5">
+                  Save Password <i class="ri-lock-line text-white fs-20"></i>
+                </button>
+              </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- js part -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+    <script>
+      // Toggle New Password Visibility
+      document.getElementById('toggleNewPassword').addEventListener('click', function () {
+        const newPasswordField = document.getElementById('newPassword');
+        const isPasswordVisible = newPasswordField.type === 'password';
+        
+        newPasswordField.type = isPasswordVisible ? 'text' : 'password';
+        this.classList.toggle('ri-eye-off-line');
+        this.classList.toggle('ri-eye-line');
+      });
+
+      // Toggle Confirm Password Visibility
+      document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+        const confirmPasswordField = document.getElementById('confirmPassword');
+        const isPasswordVisible = confirmPasswordField.type === 'password';
+        
+        confirmPasswordField.type = isPasswordVisible ? 'text' : 'password';
+        this.classList.toggle('ri-eye-off-line');
+        this.classList.toggle('ri-eye-line');
+      });
+    </script>
+    <!-- js part end -->
+  </body>
+</html>

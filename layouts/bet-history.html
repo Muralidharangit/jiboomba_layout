@@ -1,0 +1,3603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bet History</title>
+
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end -->
+    <style>
+        /*----bet-histroy---*/
+      
+
+        .bet-card {
+    color: white;
+    background: #323738;
+    border-radius: 10px;
+}
+
+
+.mybet-single-card {
+    border-radius: 8px;
+    background: #323738;
+    box-shadow: 0px 3px 8px -1px rgba(71, 50, 50, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+    margin-top: 16px;
+    padding: 16px 16px 22px;
+    color: #ffffff;
+
+}
+.mybet-single-card .card-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+.mybet-single-card .card-title h6 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #fff;
+}
+.mybet-single-card .card-title span {
+  font-size: 12px;
+  font-weight: 400;
+}
+.mybet-single-card .bet-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(89, 89, 89, 0.3);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.mybet-single-card .bet-details li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 400;
+}
+.mybet-single-card .bet-status {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mybet-single-card .bet-status li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+span.status-win.fw-600 {
+    color: #28b60b;
+}
+
+
+      
+    </style>
+</head>
+
+<body>
+
+
+      <!-- header-part -->
+      <header class="bgbody-color">
+        <nav class="navbar  fixed-top h-56">
+            <div class="container-fluid p-0">
+                <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div class="logo_brand">
+                        <a class="navbar-brand m-0" href="#"><img src="../img/logo.png" alt="" srcset=""
+                                width="100%"></a>
+                    </div>
+  
+  
+  
+  
+  
+                    <div class="d-flex mx-2">
+                      
+                       <div class="user-icon">
+                        <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;">
+                       </div>
+                      
+                    </div>
+                </div>
+  
+            </div>
+        </nav>
+    </header>
+
+    
+    <!-- header end -->
+    <section class="container mt-5 position-relative mt-65">
+        <div class="h-100">
+            <div class="pt-3 pb-2 ">
+             
+
+
+                <!----- bet History--->
+                <div class="row px-2">
+                    <div class="d-flex justify-content-between align-items-center px-0 my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="go_back_btn">
+                              <i class="ri-arrow-left-s-line text-white fs-24"></i>
+                            </button>
+                         
+                          </div>
+
+                    </div>
+
+                    <div class="my-2">
+                        <div class="text-white  fs-20">My Bets</div>
+                    </div>
+                    
+                   
+                    <div class="nav nav-pills flex-wrap" id="latest-bet-tabs" role="tablist">
+                        <button class="nav-link latest_bet_btn active" id="tab-all" data-bs-toggle="pill"
+                            data-bs-target="#content-all" type="button" role="tab" aria-controls="content-all"
+                            aria-selected="true">All</button>
+                        <button class="nav-link latest_bet_btn" id="tab-open-bets" data-bs-toggle="pill"
+                            data-bs-target="#content-open-bets" type="button" role="tab"
+                            aria-controls="content-open-bets" aria-selected="false">Pending</button>
+                        <button class="nav-link latest_bet_btn" id="tab-won" data-bs-toggle="pill"
+                            data-bs-target="#content-won" type="button" role="tab" aria-controls="content-won"
+                            aria-selected="false">Won</button>
+                        <button class="nav-link latest_bet_btn" id="tab-lost" data-bs-toggle="pill"
+                            data-bs-target="#content-lost" type="button" role="tab" aria-controls="content-lost"
+                            aria-selected="false">Lost</button>
+                       
+                    </div>
+                    <div class="tab-content p-0" id="latest-bet-tabContent">
+                        <!-- All Bets Tab -->
+                        <div class="tab-pane fade show active" id="content-all" role="tabpanel"
+                            aria-labelledby="tab-all">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino Game</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino Game</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-loss text-danger  fw-600">Loss</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Open Bets Tab -->
+                        <div class="tab-pane fade" id="content-open-bets" role="tabpanel"
+                            aria-labelledby="tab-open-bets">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Won Bets Tab -->
+                        <div class="tab-pane fade" id="content-won" role="tabpanel" aria-labelledby="tab-won">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lost Bets Tab -->
+                        <div class="tab-pane fade" id="content-lost" role="tabpanel" aria-labelledby="tab-lost">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-loss text-danger  fw-600">Loss</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+             
+            </div>
+            <!-- </div> -->
+
+            <!------top-games-end------>
+
+
+        </div>
+
+        <!-- <div>
+                <a href="./login.html">
+                    <button type="submit" class="btn btn-login w-100 my-3">
+                        Started <i class="ri-lock-line text-white fs-20"></i>
+                    </button>
+                </a>
+
+            </div> -->
+        </div>
+
+
+        <footer>
+            <!-- Footer start -->
+      <!--- footer-sec ----->
+      <div class="footer_section">
+         <footer class="pt-10 pb-12 pb-md-0">
+ 
+               <!----provider----->
+         <div class="p-1">
+             <div class="row">
+ 
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+ 
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg">
+                     </div>
+                 </div>
+                 <div class="col-4 px-1">
+                     <div class="game_provider_item">
+                         <img src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg">
+                     </div>
+                 </div>
+ 
+             </div>
+         </div>
+         <!----provider-end-->
+             <div class="container">
+                 <div class="d-flex justify-content-center my-3">
+                     <div class="logo_brand">
+                         <a class="navbar-brand m-0" href="#"><img src="../img/logo.png" alt="" srcset="" width="100%"></a>
+                     </div>
+                 </div>
+              
+                 <div class="row">
+                     <div class="col-12 p-0">
+                         <div class="footer_section__sports">
+                            
+                             <div class="top-matches-title d-flex align-items-center gap-2  my-3">
+                                 <h5 class="m-0 mt-1">Jiboomba</h5>
+                             </div>
+                             <p>A multi-award winning crypto casino. With a player-centric approach, JIBOOMBA.TOP is able to satisfy millions of gamblers across the global game..</p>
+                         </div>
+ 
+ 
+                         <div>
+                             <div class="social-links text-center w-100 justify-content-center my-2">
+                                 <a href=""><i class="fab fa-facebook-f"></i></a>
+                                 <a href=""><i class="fab fa-instagram"></i></a>
+                                 <a href=""><i class="fab fa-twitter"></i></a>
+                                 <a href=""><i class="fab fa-github"></i></a>
+                                 <a href=""><i class="fab fa-linkedin-in"></i></a>
+                               </div>
+                         </div>
+                     </div>
+ 
+                    
+                 
+                 </div>
+             </div>
+ 
+      
+         </footer>
+       
+         <div class="row">
+             <div class="col-12">
+                 <div class="copy_right">
+                     <p> Copyright © 2024 jiboomba <br> All rights are reserved and protected by
+                         law</p>
+                     
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!--- footer-sec-end ----->
+      <!-- Footer end -->
+     </footer>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+          
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+     </section>
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+
+     <!-- Fixed Footer start -->
+           <!-- Footer Navigation -->
+           <div class="unique-footer" style="bottom: 0px">
+            <ul>
+              <li
+                id="unique-home"
+                class="footer-item"
+                onclick="activateFooterItem('unique-home')"
+              >
+                <a href="./index.html">
+                  <img
+                    src="../img/footer/home (3).png"
+                    alt=""
+                    srcset=""
+                    width="27px"
+                  />
+                  <p class="mb-0">Home</p>
+                </a>
+              </li>
+      
+              <li
+                id="unique-games"
+                class="footer-item"
+                onclick="activateFooterItem('unique-games')"
+              >
+                <a href="./Allgames.html">
+                  <img
+                    src="../img/footer/search_1.png"
+                    alt=""
+                    srcset=""
+                    width="27px"
+                  />
+                  <p class="mb-0">Search</p>
+                </a>
+              </li>
+      
+              <li
+                id="unique-games"
+                class="footer-item"
+                onclick="activateFooterItem('unique-games')"
+              >
+                <a href="./Allgames.html">
+                  <img
+                    src="../img/footer/game (1).png"
+                    alt=""
+                    srcset=""
+                    width="27px"
+                  />
+                  <p class="mb-0">Games</p>
+                </a>
+              </li>
+              <li
+                id="unique-games"
+                class="footer-item"
+                onclick="activateFooterItem('unique-games')"
+              >
+                <a href="./Allgames.html">
+                  <img
+                    src="../img/footer/casino_1.png"
+                    alt=""
+                    srcset=""
+                    width="27px"
+                  />
+                  <p class="mb-0">Casino</p>
+                </a>
+              </li>
+              <li
+                id="unique-settings"
+                class="footer-item"
+                onclick="activateFooterItem('unique-settings')"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menuOffcanva"
+                aria-controls="menuOffcanva"
+              >
+                <img src="../img/footer/app.png" alt="" srcset="" width="27px" />
+                <p class="mb-0">Menu</p>
+              </li>
+            </ul>
+          </div>
+    
+        <!-- Footer Navigation -->
+            <!-- footer end -->
+
+
+
+
+            <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Profile_offcanvas"
+            aria-labelledby="offcanvasExampleLabel"
+          >
+            <div class="offcanvas-header">
+              <div class="" data-bs-dismiss="offcanvas" aria-label="Close">
+                <div class="back_icon">
+                  <i class="ri-arrow-left-s-line text-white"></i>
+                </div>
+              </div>
+            </div>
+      
+            <div class="h-25 w-100 bg-red-gradient position-absolute">
+              <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+            </div>
+            <div class="offcanvas-body">
+              <div
+                class="text-white mt-5 pt-5 d-flex align-items-center mb-3"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#Profile_view__Edit_offcanvas"
+                aria-controls="offcanvasExample"
+              >
+                <div class="pe-2">
+                  <img src="../img/icons/man.png" alt="profile_icon" />
+                </div>
+                <div>
+                  <h4 class="mb-0">Kamal Durai</h4>
+                  <h5><span class="text-grey fs-14">ID: 1234567</span></h5>
+                </div>
+                <div class="ms-auto">
+                  <i class="ri-arrow-right-s-line text-white fs-20"></i>
+                </div>
+              </div>
+      
+              <!-- Total Balance starts -->
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-0">
+                    <img
+                      src="../img/footer/coins.png"
+                      alt="money"
+                      width="30px"
+                    />Total Balance
+                  </h5>
+                </div>
+                <div>
+                  <h4>₹10,000.00</h4>
+                </div>
+              </div>
+              <!-- Total Balance ends -->
+              <!-- card 1 starts -->
+              <div class="card bg_light_grey account_input-textbox-container mt-3">
+                <div class="card-body px-2">
+                  <div>
+                    <div class="bonus_bottom_btn">
+                      <button
+                        class="btn btn-outline-light w-100"
+                        id="depositButton"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#deposit_offcanvas"
+                        aria-controls="offcanvasExample"
+                      >
+                        Deposit
+                      </button>
+                      <button
+                        class="btn btn-outline-light w-100"
+                        id="withdrawButton"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#Withdrawal_offcanvas"
+                        aria-controls="offcanvasExample"
+                      >
+                        Withdraw
+                      </button>
+                    </div>
+      
+                    <!-- icons Starts-->
+                    <div class="row">
+                      <div class="text-center  mt-3 col" data-bs-toggle="offcanvas" data-bs-target="#Bet_History_offcanvas" aria-controls="offcanvasExample">
+                        <img src="../img/icons/history.png" alt="" srcset="" width="27px">
+                        <p class="mb-0">Bet History</p>
+                      </div>
+      
+                      <div class="text-center mt-3 col" data-bs-toggle="offcanvas" data-bs-target="#transaction_offcanvas" aria-controls="offcanvasExample">
+                        <img src="../img/icons/rupee_2.png" alt="" srcset="" width="27px">
+                        <p class="mb-0">Transaction</p>
+                      </div>
+
+                      <div class="text-center mt-3 col" data-bs-toggle="offcanvas" data-bs-target="#bonus_offcanvas" aria-controls="offcanvasExample">
+                      <img src="../img/icons/gift.png" alt="" srcset="" width="27px">
+                      <p class="mb-0">Bonus</p>
+                    </div>
+                    </div>
+                    <!-- icons Ends -->
+                  </div>
+                </div>
+      
+                <!-- Card 2 -->
+              </div>
+              <!-- card 1 starts -->
+              <!-- Referral and earn card 2 starts -->
+              <div class="card bg_light_grey account_input-textbox-container mt-3">
+                <div class="card-body px-3">
+                  <!-- card 3starts -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3 referral_earn_box"
+                  >
+                    <div>
+                      <p class="mb-0 fs-16">
+                        <img
+                          src="https://static.vecteezy.com/system/resources/thumbnails/035/566/895/small/red-gift-box-and-gold-ribbon-chinese-new-year-elements-icon-3d-rendering-png.png"
+                          alt="gift"
+                          width="80px"
+                        />
+                      </p>
+                    </div>
+                    <div class="w-100">
+                      <p class="font-semibold text-white">
+                        <span>Referral &amp; get 500 + 25% reward</span>
+                      </p>
+                      <!-- input text box starts -->
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          id="copyInput"
+                          class="input2"
+                          placeholder="https://jiboomba.com"
+                          value="https://jiboomba.com"
+                        />
+                        <button class="Subscribe-btn" id="copyButton">Copy</button>
+                      </div>
+                      <!-- input text box ends -->
+                    </div>
+                  </div>
+                  <!-- card 3ends -->
+                </div>
+              </div>
+              <!--  Referral and earn 2 starts -->
+              <!-- Notification card 2 starts -->
+              <div class="card bg_light_grey account_input-textbox-container mt-3">
+                <div class="card-body px-3">
+                  <!-- card 1starts -->
+                  <!-- <a href="./notification.html"> -->
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#Notification_offcanvas"
+                    aria-controls="offcanvasExample"
+                  >
+                    <div>
+                      <p class="mb-0 fs-16">
+                        <i class="ri-notification-2-fill pe-2"></i> Notification
+                      </p>
+                    </div>
+                    <div class="icon-box">
+                      <i class="ri-arrow-right-s-line text-white"></i>
+                    </div>
+                  </div>
+                  <!-- </a> -->
+                  <!-- card 1ends -->
+                  <!-- card 2starts -->
+                  
+                  <div class="d-flex justify-content-between align-items-center mt-3"  data-bs-toggle="offcanvas"
+                  data-bs-target="#Refer_Earn_offcanvas"
+                  aria-controls="offcanvasExample">
+                    <div>
+                      <p class="mb-0 fs-16">
+                        <i class="ri-group-fill pe-2"></i> Refer and Earn
+                      </p>
+                    </div>
+                    <div class="icon-box">
+                      <i class="ri-arrow-right-s-line text-white"></i>
+                    </div>
+                  </div>
+                  <!-- card 2ends -->
+                  <!-- card 3starts -->
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div>
+                      <p class="mb-0 fs-16">
+                        <i class="ri-chat-unread-fill pe-2"></i> Chat
+                      </p>
+                    </div>
+                    <div class="icon-box">
+                      <i class="ri-arrow-right-s-line text-white"></i>
+                    </div>
+                  </div>
+                  <!-- card 3ends -->
+                  <!-- card 2starts -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#change_password_pop_up"
+                  >
+                    <div>
+                      <p class="mb-0 fs-16">
+                        <!--  -->
+                        <i class="ri-group-fill pe-2"></i> Change Password
+                      </p>
+                    </div>
+                    <div class="icon-box">
+                      <i class="ri-arrow-right-s-line text-white"></i>
+                    </div>
+                  </div>
+                  <!-- card 2ends -->
+                </div>
+              </div>
+              <!-- Notification 2starts -->
+      
+              <div
+                class="d-flex justify-content-center align-items-center white mt-3"
+              >
+              <a href="./index_logout.html">
+                <p class="fs-17">
+                  <img
+                    src="../img/icons/sign-out.png"
+                    alt="sign Out image"
+                    width="25px"
+                    class="pe-2"
+                  />Sign Out
+                </p>
+              </a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- =========================================================================================================================== -->
+      
+          <!-- Bet History Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Bet_History_offcanvas"
+            aria-labelledby="Bet_History_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Bet History</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body pt-0">
+            <div class="row px-2 mt-3">
+                    
+                   
+                    <div class="nav nav-pills flex-wrap" id="latest-bet-tabs" role="tablist">
+                        <button class="nav-link latest_bet_btn active" id="tab-all" data-bs-toggle="pill" data-bs-target="#content-all" type="button" role="tab" aria-controls="content-all" aria-selected="true">All</button>
+                        <button class="nav-link latest_bet_btn" id="tab-open-bets" data-bs-toggle="pill" data-bs-target="#content-open-bets" type="button" role="tab" aria-controls="content-open-bets" aria-selected="false" tabindex="-1">Pending</button>
+                        <button class="nav-link latest_bet_btn" id="tab-won" data-bs-toggle="pill" data-bs-target="#content-won" type="button" role="tab" aria-controls="content-won" aria-selected="false" tabindex="-1">Won</button>
+                        <button class="nav-link latest_bet_btn" id="tab-lost" data-bs-toggle="pill" data-bs-target="#content-lost" type="button" role="tab" aria-controls="content-lost" aria-selected="false" tabindex="-1">Lost</button>
+                       
+                    </div>
+                    <div class="tab-content p-0" id="latest-bet-tabContent">
+                        <!-- All Bets Tab -->
+                        <div class="tab-pane fade show active" id="content-all" role="tabpanel" aria-labelledby="tab-all">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino Game</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino Game</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-loss text-danger  fw-600">Loss</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Open Bets Tab -->
+                        <div class="tab-pane fade" id="content-open-bets" role="tabpanel" aria-labelledby="tab-open-bets">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Won Bets Tab -->
+                        <div class="tab-pane fade" id="content-won" role="tabpanel" aria-labelledby="tab-won">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-win  fw-600">Won</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lost Bets Tab -->
+                        <div class="tab-pane fade" id="content-lost" role="tabpanel" aria-labelledby="tab-lost">
+                            <div class="bet-card-sec p-0 mt-2 mb-3">
+                                <div class="bet-card">
+                                    <div class="mybet-single-card">
+                                        <div class="card-title">
+                                            <h6>Casino</h6>
+                                            <span>Wed 25 Oct - 12:25:18</span>
+                                        </div>
+                                        <ul class="bet-details">
+                                            <li><span>Match Result:</span><span>Draw</span></li>
+                                            <li><span>Fc Goa - Chennaiyin FC: (Odds)</span><span>1 x 3.5</span></li>
+                                        </ul>
+                                        <ul class="bet-status">
+                                            <li class="status-title"><span>Bet Amt</span><span>Return</span><span>Status</span></li>
+                                            <li class="price"><span>$500</span><span>$600</span><span class="status-loss text-danger  fw-600">Loss</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+            </div>
+          </div>
+          <!-- Bet History  Ends-->
+          <!-- ================================================================= -->
+          <!--    transaction_offcanvas Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="transaction_offcanvas"
+            aria-labelledby="transaction_offcanvas"
+          >
+          <div class="offcanvas-header">
+            <div
+              class="d-flex w-100 align-items-center justify-content-center position-relative"
+              style="padding-top: 8px"
+            >
+              <div
+                class="position-absolute"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                style="left: 0"
+              >
+                <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="d-flex mx-2 justify-content-center align-items-center">
+                <h5 class="mb-0">Transaction History</h5>
+              </div>
+            </div>
+          </div>
+          <div class="offcanvas-body pt-0">
+          <div class="row px-2 mt-3">
+                  
+                 
+                  <div class="nav nav-pills flex-wrap" id="latest-bet-tabs" role="tablist">
+                      <button class="nav-link latest_bet_btn active" id="tab-all" data-bs-toggle="pill" data-bs-target="#all_data" type="button" role="tab" aria-controls="all_data" aria-selected="true">All</button>
+                      <button class="nav-link latest_bet_btn" id="tab-open-bets" data-bs-toggle="pill" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="false" tabindex="-1">Pending</button>
+                      <button class="nav-link latest_bet_btn" id="tab-won" data-bs-toggle="pill" data-bs-target="#Success" type="button" role="tab" aria-controls="Success" aria-selected="false" tabindex="-1">Success</button>
+                      <button class="nav-link latest_bet_btn" id="tab-lost" data-bs-toggle="pill" data-bs-target="#Cancelled" type="button" role="tab" aria-controls="Cancelledt" aria-selected="false" tabindex="-1">Cancelled</button>
+                     
+                  </div>
+                  <div class="tab-content p-0" id="latest-bet-tabContent">
+                      <!-- all_data Tab -->
+                      <div class="tab-pane fade show active" id="all_data" role="tabpanel" aria-labelledby="tab-all">
+                          <div class="bet-card-sec p-0 mt-2 mb-3">
+                              <div class="bet-card">
+                                  <div class="mybet-single-card">
+                                      <div class="card-title">
+                                          <h6>4,000</h6>
+                                          <span>Wed 25 Oct - 12:25:18</span>
+                                      </div>
+                                      <ul class="bet-details">
+                                          <li><span>Payment Method</span><span>Online</span></li>
+                                      </ul>
+                                      <ul class="bet-status">
+                                          <li class="price"><span class="status-win  fw-600">Success</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="bet-card-sec p-0 mt-2 mb-3">
+                              <div class="bet-card">
+                                  <div class="mybet-single-card">
+                                    <div class="card-title">
+                                      <h6>4,000</h6>
+                                      <span>Wed 25 Oct - 12:25:18</span>
+                                  </div>
+                                  <ul class="bet-details">
+                                      <li><span>Payment Method</span><span>Online</span></li>
+                                  </ul>
+                                      <ul class="bet-status">
+                                         
+                                          <li class="price"><span class="status-loss text-danger  fw-600">Cancelled</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="bet-card-sec p-0 mt-2 mb-3">
+                            <div class="bet-card">
+                                <div class="mybet-single-card">
+                                    <div class="card-title">
+                                        <h6>4,000</h6>
+                                        <span>Wed 25 Oct - 12:25:18</span>
+                                    </div>
+                                    <ul class="bet-details">
+                                        <li><span>Payment Method</span><span>Online</span></li>
+                                    </ul>
+                                    <ul class="bet-status">
+                                        <li class="price"><span class="status-pending  fw-600">Pending</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <!-- pendings Tab -->
+                      <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="tab-open-bets">
+                       
+                      <div class="bet-card-sec p-0 mt-2 mb-3">
+                        <div class="bet-card">
+                            <div class="mybet-single-card">
+                                <div class="card-title">
+                                    <h6>4,000</h6>
+                                    <span>Wed 25 Oct - 12:25:18</span>
+                                </div>
+                                <ul class="bet-details">
+                                    <li><span>Payment Method</span><span>Online</span></li>
+                                </ul>
+                                <ul class="bet-status">
+                                    <li class="price"><span class="status-pending  fw-600">Pending</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      </div>
+
+                      <!-- Success Tab -->
+                      <div class="tab-pane fade" id="Success" role="tabpanel" aria-labelledby="tab-won">
+                        <div class="bet-card-sec p-0 mt-2 mb-3">
+                          <div class="bet-card">
+                              <div class="mybet-single-card">
+                                  <div class="card-title">
+                                      <h6>4,000</h6>
+                                      <span>Wed 25 Oct - 12:25:18</span>
+                                  </div>
+                                  <ul class="bet-details">
+                                      <li><span>Payment Method</span><span>Online</span></li>
+                                  </ul>
+                                  <ul class="bet-status">
+                                      <li class="price"><span class="status-win  fw-600">Success</span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+
+                      <!-- Cancelled Tab -->
+                      <div class="tab-pane fade" id="Cancelled" role="tabpanel" aria-labelledby="tab-lost">
+                        <div class="bet-card-sec p-0 mt-2 mb-3">
+                          <div class="bet-card">
+                              <div class="mybet-single-card">
+                                <div class="card-title">
+                                  <h6>4,000</h6>
+                                  <span>Wed 25 Oct - 12:25:18</span>
+                              </div>
+                              <ul class="bet-details">
+                                  <li><span>Payment Method</span><span>Online</span></li>
+                              </ul>
+                                  <ul class="bet-status">
+                                     
+                                      <li class="price"><span class="status-loss text-danger  fw-600">Cancelled</span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="bet-card-sec p-0 mt-2 mb-3">
+                        <div class="bet-card">
+                            <div class="mybet-single-card">
+                              <div class="card-title">
+                                <h6>4,000</h6>
+                                <span>Wed 25 Oct - 12:25:18</span>
+                            </div>
+                            <ul class="bet-details">
+                                <li><span>Payment Method</span><span>Online</span></li>
+                            </ul>
+                                <ul class="bet-status">
+                                   
+                                    <li class="price"><span class="status-loss text-danger  fw-600">Cancelled</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      </div>
+
+                      
+                  </div>
+
+              </div>
+          </div>
+          </div>
+          <!--    transaction_offcanvas  Ends-->
+          <!-- ========================================================== -->
+
+           <!-- ================================================================= -->
+          <!--    bonus_offcanvas Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="bonus_offcanvas"
+            aria-labelledby="bonus_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Bonus</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body pt-0">
+              <div>
+                <div class="row">
+                    <!-- <div class="top-matches-title d-flex align-items-center gap-2  my-3">
+                        <h5 class="m-0 mt-1">Bonus Option</h5>
+                    </div> -->
+                  
+    
+                    <div>
+                        <ul class="nav  my-2 bounes_filter" id="myTab" role="tablist" style="background: #192432;">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link bg-transparent active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Bounses</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false" tabindex="-1">History</button>
+                            </li>
+                           
+                         
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    
+                                <div class="bouns_sec mb-3">
+                                    <div class="card bonus_card">
+                                        <div class="card-body p-0">
+                                            <div class="bonus_card_sec" style="background: linear-gradient(238.08deg, rgb(20, 189, 242) 0%, rgb(16, 161, 207) 33%, rgb(9, 83, 151) 65%, rgb(4, 24, 74) 100%) !important; ">
+                                                <!-- Top section with text and image -->
+                                                <div class="bonus_sec_top p-4 py-2">
+                                                    <div class="bonus_sec_content">
+                                                        <span>Casino</span>
+                                                        <span class="text-shadow">
+                                                            <p>100% Crash</p>
+                                                            <p>Power Bonus</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="bonus_sec_img">
+                                                        <img src="https://upload.4rabet4.com/storage/239257/PNG_75-Crash-Power-Bonus-(1)-1-(1).png" alt="img" class="img-fluid rounded">
+                                                    </div>
+                                                </div>
+                
+                                                <!-- Bottom section with timer and buttons -->
+                                                <div class="bonusBlock_other__bottom p-2">
+                                                    <div class="timer_block_container">
+                                                        <div class="timer_block_inner d-flex align-items-center justify-content-center">
+                
+                                                            <div class="timer_block_countdown" style="max-width: 300px;">
+                                                                <div class="countdown_timer d-flex align-items-center justify-content-evenly">
+                                                                    <div class="timer-block_days">
+                                                                        <div class="countdown_value" id="days">3</div>
+                                                                        <div class="countdown_label">Days</div>
+                                                                    </div>
+                                                                    <div class="timer-block_hours">
+                                                                        <div class="countdown_value" id="hours">12</div>
+                                                                        <div class="countdown_label">Hours</div>
+                                                                    </div>
+                                                                    <div class="separator">:</div>
+                                                                    <div class="timer-block_minutes">
+                                                                        <div class="countdown_value" id="minutes">31</div>
+                                                                        <div class="countdown_label">Mins</div>
+                                                                    </div>
+                                                                    <div class="separator">:</div>
+                                                                    <div class="timer-block_seconds">
+                                                                        <div class="countdown_value" id="seconds">33</div>
+                                                                        <div class="countdown_label">Secs</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                
+                                                    <!-- Action buttons -->
+                                                    <div class="bonus_bottom_btn">
+                                                        <button class="btn btn-red w-100">
+                                                            Get bonus
+                                                        </button>
+                                                        <button class="btn btn-outline-light w-100">
+                                                            Details
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="bouns_sec mb-3">
+                                    <div class="card bonus_card">
+                                        <div class="card-body p-0">
+                                            <div class="bonus_card_sec" style="background: linear-gradient(238.08deg, rgb(242, 220, 20) 0%, rgb(207, 165, 16) 33%, rgb(151, 94, 9) 65%, rgb(74, 42, 4) 100%);">
+                                                <!-- Top section with text and image -->
+                                                <div class="bonus_sec_top p-4 py-2">
+                                                    <div class="bonus_sec_content">
+                                                        <span>Casino</span>
+                                                        <span class="text-shadow">
+                                                            <p>100% Crash</p>
+                                                            <p>Power Bonus</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="bonus_sec_img">
+                                                        <img src="https://upload.4rabet4.com/storage/235234/PNG-(6).png" alt="img" class="img-fluid rounded">
+                                                    </div>
+                                                </div>
+                
+                                                <!-- Bottom section with timer and buttons -->
+                                                <div class="bonusBlock_other__bottom p-2">
+                                                 
+                
+                                                    <!-- Action buttons -->
+                                                    <div class="bonus_bottom_btn ">
+                                                        <button class="btn btn-outline-light w-100 rounded-pill">
+                                                            Get Bonus
+                                                        </button>
+                                                        <button class="btn btn-outline-light w-100 rounded-pill">
+                                                            Details
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                
+                
+                                <div class="bouns_sec mb-3">
+                                    <div class="card bonus_card">
+                                        <div class="card-body p-0">
+                                            <div class="bonus_card_sec" style="
+                
+                background: #00b09b;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                
+                ;">
+                                                <!-- Top section with text and image -->
+                                                <div class="bonus_sec_top p-4 py-2">
+                                                    <div class="bonus_sec_content">
+                                                        <span>Casino</span>
+                                                        <span class="text-shadow">
+                                                            <p>90% Crash Power Bonus</p>
+                                                            
+                                                        </span>
+                                                    </div>
+                                                    
+                                                </div>
+                
+                                                <!-- Bottom section with timer and buttons -->
+                                                <div class="bonusBlock_other__bottom p-2">
+                                                    <div class="timer_block_container h-100">
+                                                      
+                
+                                                           
+                                                               <!-- Action buttons -->
+                                                    <div class="bonus_bottom_btn flex-column h-100">
+                                                        <button class="btn btn-red w-100">
+                                                            Get bonus
+                                                        </button>
+                                                        <button class="btn btn-outline-light w-100">
+                                                            Details
+                                                        </button>
+                                                    </div>
+                                                           
+                                                     
+                                                    </div>
+                
+                
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                
+                                <div class="bouns_sec mb-3 ">
+                                    <div class="card bonus_card">
+                                        <div class="card-body p-0">
+                                            <div class="bonus_card_sec" style="background: #095fcd;
+                                            ">
+                                                <!-- Top section with text and image -->
+                                                <div class="bonus_sec_top p-4 py-2">
+                                                    <div class="bonus_sec_content">
+                                                        <span>Casino</span>
+                                                        <span class="text-shadow">
+                                                            <p>100% Crash</p>
+                                                            <p>Power Bonus</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="bonus_sec_img">
+                                                        <img src="https://upload.4rabet4.com/storage/235577/IPL2024-(1).png" alt="img" class="img-fluid rounded">
+                                                    </div>
+                                                </div>
+                
+                                                <!-- Bottom section with timer and buttons -->
+                                                <div class="bonusBlock_other__bottom p-2">
+                                                    <div class="timer_block_container h-100">
+                                                        <div class="bonus_bottom_btn flex-column">
+                                                            <button class="btn btn-outline-light w-100 ">
+                                                                Get Bonus
+                                                            </button>
+                                                            <button class="btn btn-outline-light w-100 ">
+                                                                Details
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                
+                                                    <!-- Action buttons -->
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                            </div>
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    
+                               <!--Bonus History page -->
+                               <div class="card p-2 light-gray py-2 mb-3">
+                                 <div class="offer-detail fs-12 text-white">
+                                     <div class="d-flex justify-content-between mb-2">
+                                        <span>
+                                            DATE/TIME
+                                        </span>
+                                        <span>
+                                            04-05-2024 22:23 
+                                        </span>
+                                     </div>
+    
+                                     <div class="d-flex justify-content-between mb-2">
+                                      <span>
+                                          TIME
+                                      </span>
+                                      <span>
+                                          22:23 
+                                      </span>
+                                   </div>
+    
+    
+                                   <div class="d-flex justify-content-between mb-2">
+                                    <span>
+                                        GAME
+                                    </span>
+                                    <span>
+                                        CASINO GAMES
+                                    </span>
+                                 </div>
+    
+    
+                                 <div class="d-flex justify-content-between mb-2">
+                                  <span>
+                                      GAME TYPE
+                                  </span>
+                                  <span>
+                                      ....
+                                  </span>
+                               </div>
+    
+    
+                               <div class="d-flex justify-content-between mb-2">
+                                <span>
+                                  Amount Received
+                                </span>
+                                <span>
+                                  250 INR
+                                </span>
+                             </div>
+    
+    
+                             <div class="d-flex justify-content-between mb-2">
+                              <span>
+                                  DATE/TIME
+                              </span>
+                              <span>
+                                  04-05-2024 22:23 
+                              </span>
+                           </div>
+    
+    
+                           <div class="d-flex justify-content-between mb-2">
+                            <span>
+                              Status
+                            </span>
+                            <span class="text-danger fw-bold">
+                              Expired
+                            </span>
+                         </div>
+    
+    
+                                 </div>
+                               </div>
+                                <!--Bonus History page -->
+                                 <!--Bonus History page -->
+                               <div class="card p-2 light-gray py-2 mb-3">
+                                <div class="offer-detail fs-12 text-white">
+                                    <div class="d-flex justify-content-between mb-2">
+                                       <span>
+                                           DATE/TIME
+                                       </span>
+                                       <span>
+                                           04-05-2024 22:23 
+                                       </span>
+                                    </div>
+    
+                                    <div class="d-flex justify-content-between mb-2">
+                                     <span>
+                                         TIME
+                                     </span>
+                                     <span>
+                                         22:23 
+                                     </span>
+                                  </div>
+    
+    
+                                  <div class="d-flex justify-content-between mb-2">
+                                   <span>
+                                       GAME
+                                   </span>
+                                   <span>
+                                       CASINO GAMES
+                                   </span>
+                                </div>
+    
+    
+                                <div class="d-flex justify-content-between mb-2">
+                                 <span>
+                                     GAME TYPE
+                                 </span>
+                                 <span>
+                                     ....
+                                 </span>
+                              </div>
+    
+    
+                              <div class="d-flex justify-content-between mb-2">
+                               <span>
+                                 Amount Received
+                               </span>
+                               <span>
+                                 250 INR
+                               </span>
+                            </div>
+    
+    
+                            <div class="d-flex justify-content-between mb-2">
+                             <span>
+                                 DATE/TIME
+                             </span>
+                             <span>
+                                 04-05-2024 22:23 
+                             </span>
+                          </div>
+    
+    
+                          <div class="d-flex justify-content-between mb-2">
+                           <span>
+                             Status
+                           </span>
+                           <span class="text-danger fw-bold">
+                             Expired
+                           </span>
+                        </div>
+    
+    
+                                </div>
+                              </div>
+                               <!--Bonus History page -->
+                                <!--Bonus History page -->
+                                <div class="card p-2 light-gray py-2 mb-3">
+                                  <div class="offer-detail fs-12 text-white">
+                                      <div class="d-flex justify-content-between mb-2">
+                                         <span>
+                                             DATE/TIME
+                                         </span>
+                                         <span>
+                                             04-05-2024 22:23 
+                                         </span>
+                                      </div>
+     
+                                      <div class="d-flex justify-content-between mb-2">
+                                       <span>
+                                           TIME
+                                       </span>
+                                       <span>
+                                           22:23 
+                                       </span>
+                                    </div>
+     
+     
+                                    <div class="d-flex justify-content-between mb-2">
+                                     <span>
+                                         GAME
+                                     </span>
+                                     <span>
+                                         CASINO GAMES
+                                     </span>
+                                  </div>
+     
+     
+                                  <div class="d-flex justify-content-between mb-2">
+                                   <span>
+                                       GAME TYPE
+                                   </span>
+                                   <span>
+                                       ....
+                                   </span>
+                                </div>
+     
+     
+                                <div class="d-flex justify-content-between mb-2">
+                                 <span>
+                                   Amount Received
+                                 </span>
+                                 <span>
+                                   250 INR
+                                 </span>
+                              </div>
+     
+     
+                              <div class="d-flex justify-content-between mb-2">
+                               <span>
+                                   DATE/TIME
+                               </span>
+                               <span>
+                                   04-05-2024 22:23 
+                               </span>
+                            </div>
+     
+     
+                            <div class="d-flex justify-content-between mb-2">
+                             <span>
+                               Status
+                             </span>
+                             <span class="text-success fw-bold">
+                               Apply
+                             </span>
+                          </div>
+     
+     
+                                  </div>
+                                </div>
+                                 <!--Bonus History page -->
+    
+                            </div>
+                           
+                          </div>
+                    </div>
+               
+    
+    
+    
+                </div>
+            </div>
+            </div>
+          </div>
+          <!--    bonus_offcanvas  Ends-->
+          <!-- ========================================================== -->
+      
+              <!-- ================================================================= -->
+          <!-- Refer_Earn_offcanvas Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Refer_Earn_offcanvas"
+            aria-labelledby="Refer_Earn_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Refer and Earn</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body pt-0">
+              <!-- Profile Details Starts -->
+              <div class="card bg_light_grey account_input-textbox-container my-3">
+                <div class="card-body px-3">
+                  <div class="py-2">
+                    <div class="d-flex justify-content-center">
+                      <img src="https://static.vecteezy.com/system/resources/thumbnails/035/566/895/small/red-gift-box-and-gold-ribbon-chinese-new-year-elements-icon-3d-rendering-png.png" alt="" width="100px">
+                    </div>
+      
+                    <div class="d-flex justify-content-center my-4">
+                      <div class="w-100">
+                          <p class="font-semibold text-grey text-center">
+                            <span>Referral &amp; get</span><span class="text-white mx-1">500 + 25%</span><span>commission</span>
+                          </p>
+                          <!-- input text box starts -->
+                          <div class="input-wrapper">
+                            <input type="text" id="copyInput" class="input2" placeholder="https://jiboomba.com" value="https://jiboomba.com">
+                            <button class="Subscribe-btn" id="copyButton">Copy</button>
+                          </div>
+                          <!-- input text box ends -->
+
+                          
+                          <div class="d-flex justify-content-center">
+                            <button
+                              type="button"
+                              class="btn btn-red w-100 mt-4 mb-3 text-capitalize"
+                            >
+                            Invite friends now
+                            </button>
+                          </div>
+
+                          <ul class="text-white mt-3">
+                            <li>Share your refferal code</li>
+                            <li>fadfvbdfdfd</li>
+                            <li>Friends get  ₹10 on their first game</li>
+                            <li>you get  ₹10 off coupon</li>
+                          </ul>
+                        </div>
+                    </div>
+                   
+                  </div>
+               
+                </div>
+              </div>
+              <!-- Profile Details Starts -->
+              <!-- ==================================== -->
+            </div>
+          </div>
+          <!--    Refer_Earn_offcanvas  Ends-->
+          <!-- ========================================================== -->
+          <!-- ================================================================= -->
+          <!-- deposit_offcanva Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="deposit_offcanvas"
+            aria-labelledby="transaction_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Deposit</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body pt-0">
+              <section class="vh-100">
+                <div class="h-100">
+                  <!-- 2 button Ends -->
+                  <!-- Header 2 buttons Starts -->
+                  <div class="pt-3 pb-2">
+                    <div class="container-fluid p-0">
+                      <h5 class="mb-3">Select Payment Method</h5>
+                      <nav
+                        class="nav nav-pills d-flex justify-content-between tab_red_active"
+                        role="tablist"
+                      >
+                        <button
+                          class="nav-link btn-color text-white active w-150"
+                          id="upi-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#upi"
+                          type="button"
+                          role="tab"
+                          aria-controls="upi"
+                          aria-selected="true"
+                        >
+                          <img
+                            src="../img/icons/icons8-deposit-64.png"
+                            alt=""
+                            width="30px"
+                          />
+                          UPI
+                        </button>
+                        <button
+                          class="nav-link btn-color text-white w-150"
+                          id="profile-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#profile"
+                          type="button"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                          tabindex="-1"
+                        >
+                          <img
+                            src="../img/icons/add_account.png"
+                            alt=""
+                            width="22px"
+                          />
+                          Bank
+                        </button>
+                      </nav>
+      
+                      <div class="tab-content mt-3" id="myTabContent">
+                        <!-- tab 1 -->
+                        <div
+                          class="tab-pane fade show active"
+                          id="upi"
+                          role="tabpanel"
+                          aria-labelledby="upi-tab"
+                        >
+                          <!-- card 1 Starts -->
+                          <div
+                            class="card bg_light_grey account_input-textbox-container my-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">UPI Payment Details</h5>
+                            </div>
+                            <div class="card-body">
+                              <div class="d-flex justify-content-center mb-3">
+                                <img
+                                  src="https://www.hellotech.com/guide/wp-content/uploads/2020/05/HelloTech-qr-code-1024x1024.jpg"
+                                  class="w-50"
+                                  alt="QR_code"
+                                />
+                              </div>
+                              <form class="form-control_container" action="">
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input">Amount</label>
+                                </div>
+                                <div class="mb-2">
+                                  <label for="" class="form-label text-white"
+                                    >Payment Screenshot</label
+                                  >
+                                  <div class="custom-file-input">
+                                    <label for="formFile">
+                                      <span class="btn">Upload File</span>
+                                      <span class="file-name">No file chosen</span>
+                                    </label>
+                                    <input
+                                      type="file"
+                                      id="formFile"
+                                      class="form-control"
+                                      hidden=""
+                                    />
+                                  </div>
+                                </div>
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input"
+                                    >Enter UTR No</label
+                                  >
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                    data-bs-target="#payment"
+                                    data-bs-toggle="modal"
+                                  >
+                                    Pay
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <!-- card 1 Starts -->
+      
+                          <div
+                            class="card bg_light_grey account_input-textbox-container mt-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Select Amount</h5>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-control_container" action="">
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input">Name</label>
+                                </div>
+      
+                                <div class="recharge-amount-container button">
+                                  <button type="button" class="btn">10</button>
+                                  <button type="button" class="btn">20</button>
+                                  <button type="button" class="btn">50</button>
+                                  <button type="button" class="btn">100</button>
+                                  <button type="button" class="btn">1000</button>
+                                  <button type="button" class="btn">10000</button>
+                                  <button type="button" class="btn">100</button>
+                                  <button type="button" class="btn">1000</button>
+                                  <button type="button" class="btn">10000</button>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                  >
+                                    Sumbit
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+      
+                          <!-- card 3 Starts -->
+                          <div
+                            class="card bg_light_grey account_input-textbox-container mt-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Select Payment Details</h5>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-control_container" action="">
+                                <div class="mb-2">
+                                  <label for="" class="form-label text-white"
+                                    >Payment Screenshot</label
+                                  >
+                                  <div class="custom-file-input">
+                                    <label for="formFile">
+                                      <span class="btn">Upload File</span>
+                                      <span class="file-name">No file chosen</span>
+                                    </label>
+                                    <input
+                                      type="file"
+                                      id="formFile"
+                                      class="form-control"
+                                      hidden=""
+                                    />
+                                  </div>
+                                </div>
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input"
+                                    >Enter UTR No</label
+                                  >
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                    data-bs-target="#payment"
+                                    data-bs-toggle="modal"
+                                  >
+                                    Pay
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <!-- card 3 Starts -->
+      
+                          <!-- card 3 Starts -->
+                          <div
+                            class="card bg-transparent account_input-textbox-container mt-3 mb-4"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Rules</h5>
+                            </div>
+                            <div class="card-body" style="border: 1px solid #776f6f">
+                              <ul class="list-unstyled">
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  The amount will be deposited to your account
+                                  intantly
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- card 3 Starts -->
+                        </div>
+      
+                        <!-- tab 2 -->
+                        <div
+                          class="tab-pane fade"
+                          id="profile"
+                          role="tabpanel"
+                          aria-labelledby="profile-tab"
+                        >
+                          <!-- card 2-->
+                          <div
+                            class="card bg_light_grey account_input-textbox-container"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Bank Details</h5>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-control_container" action="">
+                                <select
+                                  class="form-select mb-3"
+                                  aria-label="Default select example"
+                                  style="
+                                    background: #202223;
+                                    color: #cecdc8;
+                                    height: 42px;
+                                  "
+                                >
+                                  <option selected="">Select Bank Name</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input">A/C Name</label>
+                                </div>
+      
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="number" />
+                                  <label class="label" for="input">A/C No</label>
+                                </div>
+      
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="number" />
+                                  <label class="label" for="input">IFSC</label>
+                                </div>
+      
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                    data-bs-target="#payment"
+                                    data-bs-toggle="modal"
+                                  >
+                                    Pay
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <!-- card 2-->
+                          <!-- card 3 Starts -->
+                          <div
+                            class="card bg-transparent account_input-textbox-container mt-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Rules</h5>
+                            </div>
+                            <div class="card-body" style="border: 1px solid #776f6f">
+                              <ul class="list-unstyled">
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  The amount will be deposited to your account
+                                  intantly
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- card 3 Starts -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Header  Ends -->
+                </div>
+              </section>
+            </div>
+          </div>
+          <!--    deposit_offcanva  Ends-->
+          <!-- ========================================================== -->
+          <!-- ================================================================= -->
+          <!--  Withdrawal Starts -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Withdrawal_offcanvas"
+            aria-labelledby="Withdrawal_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Withdraw</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body pt-0">
+              <section class="vh-100">
+                <div class="h-100">
+                  <!-- 2 button Ends -->
+                  <!-- Header 2 buttons Starts -->
+                  <div class="pt-3 pb-2">
+                    <div class="container-fluid p-0">
+                      <h5 class="mb-3">Select Payment Method</h5>
+                      <nav
+                        class="nav nav-pills d-flex justify-content-between tab_red_active"
+                        role="tablist"
+                      >
+                        <button
+                          class="nav-link btn-color text-white active w-150"
+                          id="upi-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#Bank_details"
+                          type="button"
+                          role="tab"
+                          aria-controls="Bank_details"
+                          aria-selected="true"
+                        >
+                          <img
+                            src="../img/icons/add_account.png"
+                            alt=""
+                            width="22px"
+                          />
+                          Bank Details
+                        </button>
+                        <button
+                          class="nav-link btn-color text-white w-150"
+                          id="Bank-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#AddBank-tab"
+                          type="button"
+                          role="tab"
+                          aria-controls="AddBank-tab"
+                          aria-selected="false"
+                          tabindex="-1"
+                        >
+                          <img
+                            src="../img/icons/add_account.png"
+                            alt=""
+                            width="22px"
+                          />
+                          Add Bank
+                        </button>
+                      </nav>
+      
+                      <div class="tab-content mt-3" id="myTabContent">
+                        <!-- tab 1 -->
+                        <div
+                          class="tab-pane fade show active"
+                          id="Bank_details"
+                          role="tabpanel"
+                          aria-labelledby="upi-tab"
+                        >
+                          <!-- Select Amount Starts -->
+      
+                          <div
+                            class="card bg_light_grey account_input-textbox-container mt-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Select Amount</h5>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-control_container" action="">
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="number" />
+                                  <label class="label" for="input"
+                                    >Enter the Amount</label
+                                  >
+                                </div>
+      
+                                <div class="recharge-amount-container button">
+                                  <button type="button" class="btn">10</button>
+                                  <button type="button" class="btn">20</button>
+                                  <button type="button" class="btn">50</button>
+                                  <button type="button" class="btn">100</button>
+                                  <button type="button" class="btn">1000</button>
+                                  <button type="button" class="btn">10000</button>
+                                  <button type="button" class="btn">100</button>
+                                  <button type="button" class="btn">1000</button>
+                                  <button type="button" class="btn">10000</button>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                  >
+                                    Sumbit
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+      
+                          <!-- Select Amount Ends -->
+                          <!-- card 1 Starts -->
+                          <div
+                            class="card bg_light_grey br-grey account_input-textbox-container my-3"
+                          >
+                            <div class="card-body p-2">
+                              <!--  Details Starts -->
+                              <div class="">
+                                <!-- card 1 Starts -->
+                                <div
+                                  class="d-flex justify-content-between border rounded mt-2 py-2 px-2"
+                                >
+                                  <div class="d-flex">
+                                    <!-- input icon starts -->
+                                    <div class="px-2 py-1">
+                                      <div class="form-check px-3">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="flexRadioDefault"
+                                          id="flexRadioDefault1"
+                                        />
+                                      </div>
+                                    </div>
+                                    <!-- bank Details Starts -->
+                                    <div>
+                                      <div>
+                                        <p class="mb-0 text-grey">Bank Name</p>
+                                        <h6>Indian Bank</h6>
+                                      </div>
+                                      <div>
+                                        <p class="mb-0 text-grey">A/c Name</p>
+                                        <h6>Jibooma</h6>
+                                      </div>
+                                      <div>
+                                        <p class="mb-0 text-grey">A/c No</p>
+                                        <h6>XXXXXXXXXXXX907</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+      
+                                  <div class="">
+                                    <!-- <i class="ri-edit-box-fill fs-1 text-blue"></i> -->
+                                    <i
+                                      class="ri-file-edit-line fs-1 text-white"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#Edit_bank_pop_up"
+                                    ></i>
+                                    <i
+                                      class="ri-delete-bin-6-fill fs-1 text-danger"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#delete_pop_up"
+                                    ></i>
+                                  </div>
+                                </div>
+      
+                                <!-- card 1 ends -->
+                                <div
+                                  class="d-flex justify-content-between border rounded mt-2 py-2 px-2"
+                                >
+                                  <div class="d-flex">
+                                    <!-- input icon starts -->
+                                    <div class="px-2 py-1">
+                                      <div class="form-check px-3">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="flexRadioDefault"
+                                          id="flexRadioDefault1"
+                                        />
+                                      </div>
+                                    </div>
+                                    <!-- bank Details Starts -->
+                                    <div>
+                                      <div>
+                                        <p class="mb-0 text-grey">Bank Name</p>
+                                        <h6>Indian Bank</h6>
+                                      </div>
+                                      <div>
+                                        <p class="mb-0 text-grey">A/c Name</p>
+                                        <h6>Jibooma</h6>
+                                      </div>
+                                      <div>
+                                        <p class="mb-0 text-grey">A/c No</p>
+                                        <h6>XXXXXXXXXXXX907</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+      
+                                  <div class="">
+                                    <!-- <i class="ri-edit-box-fill fs-1 text-blue"></i> -->
+                                    <i
+                                      class="ri-file-edit-line fs-1 text-white"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#Edit_bank_pop_up"
+                                    ></i>
+                                    <i
+                                      class="ri-delete-bin-6-fill fs-1 text-danger"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#delete_pop_up"
+                                    ></i>
+                                  </div>
+                                </div>
+                                <!-- card 1 Starts -->
+                              </div>
+                              <!--  Details ends -->
+      
+                              <div class="d-flex justify-content-center">
+                                <button
+                                  type="button"
+                                  class="btn btn-red w-50 mt-4 mb-3 text-capitalize"
+                                >
+                                  Processed
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Card 1 Ends -->
+      
+                          <!-- card 3 Starts -->
+                          <div
+                            class="card bg-transparent account_input-textbox-container mt-3"
+                            style="margin-bottom: 100px"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Rules</h5>
+                            </div>
+                            <div class="card-body" style="border: 1px solid #776f6f">
+                              <ul class="list-unstyled">
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  The amount will be deposited to your account
+                                  intantly
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- card 3 Starts -->
+                        </div>
+      
+                        <!-- tab 2 -->
+                        <div
+                          class="tab-pane fade"
+                          id="AddBank-tab"
+                          role="tabpanel"
+                          aria-labelledby="AddBank-tab"
+                        >
+                          <!-- card 2-->
+                          <div
+                            class="card bg_light_grey account_input-textbox-container"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Bank Details</h5>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-control_container" action="">
+                                <select
+                                  class="form-select mb-3"
+                                  aria-label="Default select example"
+                                  style="
+                                    background: #202223;
+                                    color: #cecdc8;
+                                    height: 42px;
+                                  "
+                                >
+                                  <option selected="">Select Bank Name</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="text" />
+                                  <label class="label" for="input">A/C Name</label>
+                                </div>
+      
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="number" />
+                                  <label class="label" for="input">A/C No</label>
+                                </div>
+      
+                                <div class="input-field mb-3">
+                                  <input required="" class="input" type="number" />
+                                  <label class="label" for="input">IFSC</label>
+                                </div>
+      
+                                <div class="d-flex justify-content-center">
+                                  <button
+                                    type="button"
+                                    class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                                  >
+                                    Add
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <!-- card 2-->
+                          <!-- card 3 Starts -->
+                          <div
+                            class="card bg-transparent account_input-textbox-container mt-3"
+                          >
+                            <div
+                              class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+                            >
+                              <h5 class="text-center mb-0">Rules</h5>
+                            </div>
+                            <div class="card-body" style="border: 1px solid #776f6f">
+                              <ul class="list-unstyled">
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  The amount will be deposited to your account
+                                  intantly
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                                <li class="text-white fs-14 mb-2">
+                                  <img
+                                    src="../img/icons/tick.png"
+                                    alt=""
+                                    width="20px"
+                                  />
+                                  Transfer the amount through our safe payment gateway
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- card 3 Starts -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Header  Ends -->
+                </div>
+              </section>
+            </div>
+          </div>
+          <!--  Withdrawal  Ends -->
+          <!-- ========================================================== -->
+      
+          <!-- Profile_view and Edit  Starts-->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Profile_view__Edit_offcanvas"
+            aria-labelledby="Profile_view__Edit_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div
+                class="d-flex w-100 align-items-center justify-content-center position-relative"
+                style="padding-top: 8px"
+              >
+                <div
+                  class="position-absolute"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                  style="left: 0"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Profile Details</h5>
+                </div>
+              </div>
+            </div>
+      
+            <div class="offcanvas-body pt-0">
+              <!-- Profile Details Starts -->
+              <div class="card bg_light_grey account_input-textbox-container my-3">
+                <div class="card-body px-3">
+                  <div class="py-2">
+                    <div class="avatar-upload">
+                      <div class="avatar-preview">
+                        <div
+                          id="imagePreview"
+                          style="background-image: url('../img/icons/man\ \(1\).png')"
+                        ></div>
+                      </div>
+                    </div>
+      
+                    <div class="d-flex justify-content-center my-4">
+                      <!-- <a href="./profile_edit.html"> -->
+                      <button
+                        class="Btn"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#Edit_bank_pop_up"
+                      >
+                        Edit
+                        <svg class="svg" viewBox="0 0 512 512">
+                          <path
+                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
+                          ></path>
+                        </svg>
+                      </button>
+                      <!-- </a> -->
+                    </div>
+                    <div class="text-center text-white">
+                      <h2 class="fs-22 mb-1">Kamal Durai</h2>
+                      <h6 class="fs-15">
+                        <span>User Id : <span>1234567</span></span>
+                      </h6>
+                    </div>
+                  </div>
+                  <!-- Profile Details Starts -->
+                  <div class="py-4">
+                    <!-- card 3 Starts -->
+                    <div class="d-flex justify-content-start my-2">
+                      <div class="profile_icons">
+                        <i class="ri-phone-line text-white fs-20"></i>
+                      </div>
+                      <div>
+                        <p class="mb-1">Mobile Phone</p>
+                        <h5 class="fs-16 text-white">+91 1234567890</h5>
+                      </div>
+                    </div>
+                    <!-- card 3 ends -->
+      
+                    <!-- card 2 Starts -->
+                    <div class="d-flex justify-content-start my-2">
+                      <div class="profile_icons">
+                        <i class="ri-mail-send-line text-white fs-20"></i>
+                        <!-- <i class="ri-focus-3-line text-white fs-20"></i> -->
+                      </div>
+                      <div>
+                        <p class="mb-1">Email Address</p>
+                        <h5 class="fs-16 text-white">example@gmail.com</h5>
+                      </div>
+                    </div>
+                    <!-- card 2 ends -->
+                  </div>
+                  <!-- Profile Details ends -->
+                </div>
+              </div>
+              <!-- Profile Details Starts -->
+      
+              <!-- ==================================== -->
+            </div>
+          </div>
+          <!-- Profile_view and Edit Ends-->
+          <!-- Profile Edit Pop-up starts -->
+          <!-- Edit Bank Details POP-UP Starts -->
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="Edit_bank_pop_up"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered Edit_bank_pop_up">
+              <div class="modal-content" style="background-color: #313737">
+                <div class="modal-header">
+                  <h2 class="modal-title fs-5 py-2" id="exampleModalLabel">
+                    Edit Profile Details
+                  </h2>
+                  <button
+                    type="button"
+                    class="btn-close modal_edit_pop-up me-1 bg-white rounded"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <i class="ri-close-large-line text-white fs-16"></i>
+                  </button>
+                </div>
+                <div class="modal-body p-0">
+                  <!-- Edit Profile Starts -->
+                  <div class="card bg_light_grey account_input-textbox-container">
+                    <div class="card-body">
+                      <div class="">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input
+                              type="file"
+                              id="imageUpload"
+                              accept=".png, .jpg, .jpeg"
+                            />
+                            <label for="imageUpload">
+                              <i
+                                class="ri-pencil-fill position-relative"
+                                style="left: 8px; top: 3px"
+                              ></i>
+                            </label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div
+                              id="imagePreview"
+                              style="
+                                background-image: url('https://img.freepik.com/free-photo/cartoon-man-wearing-glasses_23-2151136831.jpg?semt=ais_hybrid');
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <form class="form-control_container" action="">
+                        <div class="input-field">
+                          <input required="" class="input" type="text" />
+                          <label class="label" for="input">Name</label>
+                        </div>
+                        <div class="input-field">
+                          <input required="" class="input" type="text" />
+                          <label class="label" for="input">Enter Email</label>
+                        </div>
+                        <div class="input-field">
+                          <input required="" class="input" type="text" />
+                          <label class="label" for="input">Mobile Number</label>
+                        </div>
+      
+                        <div class="d-flex justify-content-center align-items-center">
+                          <button class="btn btn-red w-50 mb-3 mt-3">
+                            Update Data
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- Edit Profile Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Bank Details POP-UP Ends -->
+          <!-- Profile Edit Pop-up ends -->
+      
+          <!-- Change Password starts -->
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="change_password_pop_up"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered Edit_bank_pop_up">
+              <div class="modal-content" style="background-color: #313737">
+                <div class="modal-header">
+                  <h2 class="modal-title fs-5 py-2" id="exampleModalLabel">
+                    Change Password
+                  </h2>
+                  <button
+                    type="button"
+                    class="btn-close modal_edit_pop-up me-1 bg-white rounded"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <i class="ri-close-large-line text-white fs-16"></i>
+                  </button>
+                </div>
+                <div class="modal-body p-0">
+                  <!-- Edit Profile Starts -->
+                  <div class="card bg_light_grey account_input-textbox-container">
+                    <div class="card-body">
+                      <form class="form-control_container" action="">
+                        <div class="input-field">
+                          <input
+                            required=""
+                            class="input position-relative"
+                            type="password"
+                            id="oldPassword"
+                          />
+                          <i
+                            class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                            style="font-size: 1.5rem; cursor: pointer"
+                          ></i>
+                          <label class="label" for="oldPassword">Old Password</label>
+                        </div>
+                        <div class="input-field">
+                          <input
+                            required=""
+                            class="input position-relative"
+                            type="password"
+                            id="newPassword"
+                          />
+                          <i
+                            class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                            style="font-size: 1.5rem; cursor: pointer"
+                          ></i>
+                          <label class="label" for="newPassword">New Password</label>
+                        </div>
+                        <div class="input-field">
+                          <input
+                            required=""
+                            class="input position-relative"
+                            type="password"
+                            id="repeatPassword"
+                          />
+                          <i
+                            class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                            style="font-size: 1.5rem; cursor: pointer"
+                          ></i>
+                          <label class="label" for="repeatPassword"
+                            >Repeat Password</label
+                          >
+                        </div>
+                        <button class="btn btn-login w-100 mb-3 mt-3">
+                          Change Password
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- Edit Profile Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Bank Details POP-UP Ends -->
+          <!-- Profile Edit Pop-up ends -->
+          <!-- Change Password Ends -->
+          <!-- ============================================================================ -->
+          <!-- Notification_offcanvas Starts -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="Notification_offcanvas"
+            aria-labelledby="Notification_offcanvas"
+          >
+            <div class="offcanvas-header">
+              <div class="d-flex w-100 align-items-center">
+                <div
+                  class="logo_brand"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  <div class="back_icon"><i class="ri-arrow-left-s-line"></i></div>
+                </div>
+                <div class="d-flex mx-2 justify-content-center align-items-center">
+                  <h5 class="mb-0">Notification</h5>
+                </div>
+              </div>
+            </div>
+      
+            <div class="offcanvas-body pt-0">
+              <!-- 2 buttons navtab starts  -->
+              <section class="vh-100">
+                <div class="h-100">
+                  <!-- Header 2 buttons Starts -->
+                  <div class="pt-3 pb-2">
+                    <div class="container-fluid p-0">
+                      <!-- <h5 class="mb-3">Select Payment Method</h5> -->
+                      <nav
+                        class="nav nav-pills d-flex justify-content-between tab_red_active"
+                        role="tablist"
+                      >
+                        <button
+                          class="nav-link btn-color text-white w-150 active"
+                          id="upi-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#Bank_details"
+                          type="button"
+                          role="tab"
+                          aria-controls="Bank_details"
+                          aria-selected="true"
+                        >
+                          <!-- <img src="../img/icons/add_account.png" alt="" width="22px" /> -->
+                          System Notice
+                        </button>
+                        <button
+                          class="nav-link btn-color text-white w-150"
+                          id="profile-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#profile"
+                          type="button"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                          tabindex="-1"
+                        >
+                          <!-- <img src="../img/icons/add_account.png" alt="" width="22px" /> -->
+                          Activies
+                        </button>
+                      </nav>
+      
+                      <div class="tab-content mt-3" id="myTabContent">
+                        <!-- tab 1 -->
+                        <div
+                          class="tab-pane fade active show"
+                          id="Bank_details"
+                          role="tabpanel"
+                          aria-labelledby="upi-tab"
+                        >
+                          <!-- Select Amount Starts -->
+      
+                          <div
+                            class="card bg_light_grey account_input-textbox-container mt-3"
+                          >
+                            <div class="card-body">
+                              <div class="text-white">
+                                <p class="mb-0 text-grey">12/14/2024, 10:43:17AM</p>
+                                <h5 class="mt-2">
+                                  🏀Its Weekly Sports Bonus Time!⚽️
+                                </h5>
+                              </div>
+                              <img
+                                class="my-2 w-100"
+                                src="../img/notification/banner_1.jpg"
+                                width=""
+                              />
+      
+                              <div
+                                class="overflow-hidden text-secondary whitespace-pre-wrap content"
+                                style="max-height: 3.9rem"
+                              >
+                                <p>
+                                  Weekly Sports bonus has been dropped successfully!
+                                  🔥
+                                </p>
+                                <p>
+                                  Wager period Saturday December 7th to Friday
+                                  December 13th
+                                </p>
+                                <p class="mb-0">Minimum VIP level 22+.</p>
+                                <p class="mb-0">Wager $500 or more = $5 bonus</p>
+                                <p class="mb-0">Wager $2,500 or more = $30 bonus</p>
+                                <p class="mb-0">Wager $5,000 or more = $70 bonus</p>
+                                <p class="mb-0">Wager $10,000 or more = $150 bonus</p>
+                                <p class="mb-0">Wager $50,000 or more = $500 bonus</p>
+                                <p class="mb-0">
+                                  Wager $250,000 or more = $1000 bonus
+                                </p>
+                                <p>
+                                  Grab your weekly bonus boost every Saturday with BC
+                                  Sports Club!
+                                </p>
+                              </div>
+      
+                              <div
+                                class="d-flex justify-content-between align-items-center"
+                              >
+                                <button
+                                  class="read-more btn red-gradient text-white"
+                                  onclick="toggleText(event)"
+                                >
+                                  Read More
+                                </button>
+                                <div>
+                                  <i
+                                    class="ri-delete-bin-6-line fs-25 text-grey"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#delete_pop_up"
+                                  ></i>
+                                </div>
+                              </div>
+                            </div>
+      
+                            <!-- Card 2 -->
+                          </div>
+                          <div
+                            class="card bg_light_grey account_input-textbox-container mt-3"
+                          >
+                            <div class="card-body">
+                              <div class="text-white">
+                                <p class="mb-0 text-grey">12/14/2024, 10:43:17AM</p>
+                                <h5 class="mt-2">
+                                  🏀Its Weekly Sports Bonus Time!⚽️
+                                </h5>
+                              </div>
+                              <img
+                                class="my-2 w-100"
+                                src="../img/notification/banner_1.jpg"
+                                width=""
+                              />
+      
+                              <div
+                                class="overflow-hidden text-secondary whitespace-pre-wrap content"
+                                style="max-height: 3.9rem"
+                              >
+                                <p>
+                                  Weekly Sports bonus has been dropped successfully!
+                                  🔥
+                                </p>
+                                <p>
+                                  Wager period Saturday December 7th to Friday
+                                  December 13th
+                                </p>
+                                <p class="mb-0">Minimum VIP level 22+.</p>
+                                <p class="mb-0">Wager $500 or more = $5 bonus</p>
+                                <p class="mb-0">Wager $2,500 or more = $30 bonus</p>
+                                <p class="mb-0">Wager $5,000 or more = $70 bonus</p>
+                                <p class="mb-0">Wager $10,000 or more = $150 bonus</p>
+                                <p class="mb-0">Wager $50,000 or more = $500 bonus</p>
+                                <p class="mb-0">
+                                  Wager $250,000 or more = $1000 bonus
+                                </p>
+                                <p>
+                                  Grab your weekly bonus boost every Saturday with BC
+                                  Sports Club!
+                                </p>
+                              </div>
+      
+                              <div
+                                class="d-flex justify-content-between align-items-center"
+                              >
+                                <button
+                                  class="read-more btn red-gradient text-white"
+                                  onclick="toggleText(event)"
+                                >
+                                  Read More
+                                </button>
+                                <div>
+                                  <i
+                                    class="ri-delete-bin-6-line fs-25 text-grey"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#delete_pop_up"
+                                  ></i>
+                                </div>
+                              </div>
+                            </div>
+      
+                            <!-- Card 2 -->
+                          </div>
+                          <!-- Select Amount Ends -->
+                        </div>
+      
+                        <!-- tab 2 -->
+                        <div
+                          class="tab-pane fade"
+                          id="profile"
+                          role="tabpanel"
+                          aria-labelledby="profile-tab"
+                        >
+                          <div
+                            class="d-flex justify-content-center flex-column align-items-center"
+                          >
+                            <div class="mt-5">
+                              <img
+                                src="../img/notification/img_2.png"
+                                width="300px"
+                                alt=""
+                              />
+                            </div>
+                            <p class="text-white fs-6">Oops! There is no data yet!</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Header  Ends -->
+                </div>
+              </section>
+              <!-- 2 buttons navtab Ends  -->
+              <!-- ==================================== -->
+            </div>
+          </div>
+          <!-- Notification_offcanvas Ends -->  
+      
+
+  <!---menu off-canva-->
+  <div
+  class="offcanvas offcanvas_bg offcanvas-end"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="menuOffcanva"
+  aria-labelledby=" menuOffcanvaLabel"
+>
+  <div class="offcanvas-header d-flex justify-content-between">
+    <h5
+      class="offcanvas-title fs-24 mx-2"
+      id=" menuOffcanvaLabel"
+    >
+      Menu
+    </h5>
+    <button
+      type="button"
+      class="btn off_canvas_close_btn me-1 bg-white rounded"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="ri-close-large-line text-white fs-17"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="./index.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+      
+      <div class="">
+        <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24">
+        <span class="mx-3 text-white">Home</span>
+      </div>
+   
+      
+
+
+        <div class="icon-box">
+                <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+    </div>
+  </a>
+    <a href="./Allgames.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+     
+      <div class="">
+        <img src="../img/SIDEMENU/club.png" alt="" srcset="" width="24" />
+        <span class="mx-3 text-white">All Games</span>
+      </div>
+
+      <div class="icon-box">
+        <i class="ri-arrow-right-s-line text-white"></i>
+      </div>
+     
+    </div>
+    </a>
+
+    <!----accordion---->
+    <div class="accordion accordion_sec" id="accordionExample">
+      <div class="accordion-item game_title_accordion_item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed game_title_btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <img
+              src="../img/SIDEMENU/chart-mixed-up-circle-dollar.png"
+              alt=""
+              srcset=""
+              width="24"
+            />
+            <span class="mx-3 text-white">Trending Game</span>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body game_items_accordion">
+            <div
+              class="d-flex align-items-center game_items_accordion_list"
+            >
+              <div class="">
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
+              </div>
+              <span class="mx-3 text-white">Spribe</span>
+            </div>
+          </div>
+          <div class="accordion-body game_items_accordion">
+            <div
+              class="d-flex align-items-center game_items_accordion_list"
+            >
+              <div class="">
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
+              </div>
+              <span class="mx-3 text-white">Turbo Games</span>
+            </div>
+          </div>
+          <div class="accordion-body game_items_accordion">
+            <div
+              class="d-flex align-items-center game_items_accordion_list"
+            >
+              <div class="">
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
+              </div>
+              <span class="mx-3 text-white">Game Hub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----accordion end---->
+    <div class="menu">
+      <!-- Main -->
+       <a href="./howtoplay.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        <div>
+          <img
+            src="../img/SIDEMENU/mode-portrait.png"
+            alt=""
+            srcset=""
+            width="24"
+          /><!-- Icon for "Main" -->
+          <span class="mx-3 text-white">How to Play</span>
+        </div>
+
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+        
+      </div>
+       </a>
+      <!-- LIVE -->
+      <a href="./terms&condition.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/deposit.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Term & Condition</span>
+  
+          </div>
+        
+       
+        
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+      </div>
+    </a>
+       <!-- LIVE -->
+       <a href="./Bonus.html">
+       <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/icons/gift.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Bonus</span>
+  
+          </div>
+      
+       
+        
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+      </div>
+    </a>
+
+      <!-- Sports -->
+      <a href="./privacy_policy.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/money-from-bracket.png"
+              alt=""
+              srcset=""
+              width="24"
+            />
+            <!-- Existing "Sports" Icon -->
+            <span class="mx-3 text-white">Privacy Policy</span>
+          </div>
+         
+        
+       
+
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+      </div>
+
+    </a>
+      <!-- Cricket -->
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        <div>
+          <img
+            src="../img/SIDEMENU/settings.png"
+            alt=""
+            srcset=""
+            width="24"
+          /><!-- Icon for "Cricket" -->
+          <span class="mx-3 text-white">Settings</span>
+        </div>
+       
+
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        <a href="./index_logout.html">
+          <div>
+            <img
+              src="../img/SIDEMENU/address-card.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "Cricket" -->
+            <span class="mx-3 text-white">Logout</span>
+          </div>
+        </a>
+       
+        
+
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---menu off-canva end-->
+
+
+<!-- Modal Starts -->
+   <!-- Modal -->
+   <div
+   class="modal fade"
+   id="Edit_bank_pop_up"
+   tabindex="-1"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog modal-dialog-centered Edit_bank_pop_up">
+     <div class="modal-content" style="background-color: #232323">
+       <div class="modal-header">
+         <h2 class="modal-title fs-5 py-2" id="exampleModalLabel">
+           Edit Bank Details
+         </h2>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+           aria-label="Close"
+         ></button>
+       </div>
+       <div class="modal-body">
+         <div class="card account_input-textbox-container">
+           <!-- <div
+             class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+           >
+             <h5 class="text-center mb-0">Bank Details</h5>
+           </div> -->
+           <div class="card-body">
+             <form class="form-control_container" action="">
+               <select
+                 class="form-select mb-3"
+                 aria-label="Default select example"
+                 style="background: #202223; color: #cecdc8; height: 42px"
+               >
+                 <option selected="">Select Bank Name</option>
+                 <option value="1">One</option>
+                 <option value="2">Two</option>
+                 <option value="3">Three</option>
+               </select>
+               <div class="input-field mb-3">
+                 <input required="" class="input" type="text" />
+                 <label class="label" for="input">A/C Name</label>
+               </div>
+
+               <div class="input-field mb-3">
+                 <input required="" class="input" type="number" />
+                 <label class="label" for="input">A/C No</label>
+               </div>
+
+               <div class="input-field mb-3">
+                 <input required="" class="input" type="number" />
+                 <label class="label" for="input">IFSC</label>
+               </div>
+
+               <div class="d-flex justify-content-center">
+                 <button
+                   type="button"
+                   class="btn btn-login w-50 mt-4 mb-3 text-capitalize"
+                 >
+                   Submit
+                 </button>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+       <!-- <div class="modal-footer">
+         <button
+           type="button"
+           class="btn btn-secondary"
+           data-bs-dismiss="modal"
+         >
+           Close
+         </button>
+         <button type="button" class="btn btn-primary">Save changes</button>
+       </div> -->
+     </div>
+   </div>
+ </div>
+ <!-- Add Bank Details POP-UP Ends -->
+ <!-- Modal -->
+ <div
+   class="modal fade"
+   id="payment"
+   tabindex="-1"
+   aria-modal="true"
+   role="dialog"
+ >
+   <div
+     class="modal-dialog modal-dialog-centered modal-sm justify-content-center"
+   >
+     <div class="modal-content" style="width: 220px">
+       <div class="modal-body d-flex flex-column align-items-center">
+         <img src="../img/icons/rupee.gif" class="mb-2 w-75" />
+         <div class="fw-700 fs-13 text-center text-black mb-3">
+           Your Request <br />
+           Is In Our Queue!
+         </div>
+         <span class="btn text-white green-bg">Thank You</span>
+         <span class="text-dard-grey fs-10 fw-700 mt-3"
+           >For Choosing jiboomba</span
+         >
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- Delete POP-UP starts -->
+ <div
+   class="modal fade"
+   id="delete_pop_up"
+   tabindex="-1"
+   aria-modal="true"
+   role="dialog"
+ >
+   <div class="modal-dialog modal-dialog-centered justify-content-center">
+     <div class="modal-content" style="width: 85%">
+       <div class="modal-body d-flex flex-column align-items-center py-5">
+         <img src="../img/icons/warning.gif" class="mb-2" width="64px" />
+         <div class="fw-700 text-center text-black mb-3 fs-2">
+           Are You Sure?
+         </div>
+         <p class="text-dark text-center fs-15">
+           Do you really want to delete this records? This process cannot be
+           undone.
+         </p>
+         <!-- <span class="btn text-white green-bg">Thank You</span>
+         <span class="text-dard-grey fs-10 fw-700 mt-3"
+           >For Choosing jiboomba</span
+         > -->
+         <div class="d-flex gap-2 mt-2">
+           <button
+             type="button"
+             class="btn btn-secondary"
+             data-bs-dismiss="modal"
+           >
+             Cancel
+           </button>
+           <button
+             type="button"
+             class="btn btn-danger"
+             data-bs-toggle="modal"
+             data-bs-target="#delete_pop_up_2"
+           >
+             Delete
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- Delete POP-UP Ends -->
+ <!-- Delete POP-UP starts -->
+ <div
+   class="modal fade"
+   id="delete_pop_up_2"
+   tabindex="-1"
+   aria-modal="true"
+   role="dialog"
+ >
+   <div
+     class="modal-dialog modal-dialog-centered modal-sm justify-content-center"
+   >
+     <div class="modal-content py-3" style="width: 300px">
+       <div class="modal-body d-flex flex-column align-items-center">
+         <img src="../img/icons/tick_2.gif" class="mb-2" width="60px" />
+         <div class="fw-700 fs-15 text-center text-black my-3">
+           Your data has been Deleted <br />Successfully!
+         </div>
+         <div class="d-flex gap-2 mt-2">
+           <button
+             type="button"
+             class="btn green2-bg text-white"
+             data-bs-dismiss="modal"
+           >
+             OK
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- Delete POP-UP Ends -->
+<!-- Modal Ends -->
+
+
+  <!-- js part -->
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/swiper.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+
+  <script>
+      const swiper = new Swiper('.mySwiper', {
+        spaceBetween: 30, // Space between slides
+        autoplay: {
+          delay: 3000, // Time between slides in milliseconds (30000ms = 30 seconds)
+          disableOnInteraction: false, // This ensures autoplay doesn't stop when interacting with the slider
+        },
+        scrollbar: {
+          hide: true, // Hides the scrollbar
+        },
+      });
+    </script>
+
+  <!-- js part end -->
+
+  <script>
+
+document.addEventListener('scroll', () => {
+const footer = document.querySelector('.unique-footer');
+const scrollY = window.scrollY;
+
+if (scrollY > 100) { // Adjust threshold as needed
+  footer.style.bottom = '0'; // Footer slides up
+} else {
+  footer.style.bottom = '-60px'; // Footer slides back down
+}
+});
+
+
+
+  </script>
+<script>
+  const offcanvasStack = [];
+  
+  // Add event listeners to all offcanvases dynamically
+  document.querySelectorAll('.offcanvas').forEach((offcanvas) => {
+    // When an offcanvas is shown, push its ID to the stack
+    offcanvas.addEventListener('show.bs.offcanvas', (event) => {
+      const activeOffcanvas = document.querySelector('.offcanvas.show');
+      if (activeOffcanvas && offcanvas.id !== 'Profile_offcanvas') {
+        // Only add to the stack if it's not the Profile Offcanvas
+        offcanvasStack.push(activeOffcanvas.id);
+      }
+    });
+  
+    // When an offcanvas is hidden, handle closing or going back to the previous one
+    offcanvas.addEventListener('hidden.bs.offcanvas', (event) => {
+      if (offcanvas.id === 'menuOffcanva') {
+        // If the menuOffcanva is closed, close all other open offcanvases
+        document.querySelectorAll('.offcanvas.show').forEach((openOffcanvas) => {
+          const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(openOffcanvas);
+          if (bootstrapOffcanvas) {
+            bootstrapOffcanvas.hide();
+          }
+        });
+  
+        // Clear the stack and reset styles
+        offcanvasStack.length = 0;
+        resetBodyStyles();
+      } else if (offcanvas.id === 'Profile_offcanvas') {
+        // If the Profile Offcanvas is closed, clear the stack and reset body styles
+        offcanvasStack.length = 0;
+        resetBodyStyles();
+      } else {
+        // Otherwise, restore the previous offcanvas if there are any in the stack
+        if (offcanvasStack.length > 0) {
+          const previousOffcanvasId = offcanvasStack.pop();
+          const previousOffcanvas = document.getElementById(previousOffcanvasId);
+          if (previousOffcanvas) {
+            const bootstrapOffcanvas = new bootstrap.Offcanvas(previousOffcanvas);
+            bootstrapOffcanvas.show();
+          }
+        } else {
+          // If no more offcanvases are in the stack, show the Profile Offcanvas
+          const profileOffcanvas = document.getElementById('Profile_offcanvas');
+          if (profileOffcanvas) {
+            const bootstrapOffcanvas = new bootstrap.Offcanvas(profileOffcanvas);
+            bootstrapOffcanvas.show();
+          }
+        }
+      }
+    });
+  });
+  
+  // Function to reset body styles
+  function resetBodyStyles() {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
+  </script>
+  
+
+<!-- read More Starts -->
+<script>
+  function toggleText(event) {
+    const button = event.target; // The button that was clicked
+    const cardBody = button.closest(".card-body"); // Find the closest card-body
+    const content = cardBody.querySelector(".content"); // Find the content within the card-body
+
+    if (content.style.maxHeight === "3.9rem") {
+      content.style.maxHeight = "none"; // Expand to show full content
+      button.textContent = "Show Less";
+    } else {
+      content.style.maxHeight = "3.9rem"; // Collapse to show less content
+      button.textContent = "Read More";
+    }
+  }
+</script>
+<!-- read More Ends -->
+ <!-- Change Password Starts -->
+ <script>
+  // Attach event listeners to all eye icons
+  document.querySelectorAll(".togglePassword").forEach((toggleIcon) => {
+    toggleIcon.addEventListener("click", function () {
+      const passwordField = this.previousElementSibling; // Get the corresponding password field
+      const isPasswordVisible = passwordField.type === "password";
+
+      // Toggle password visibility
+      passwordField.type = isPasswordVisible ? "text" : "password";
+
+      // Change the icon
+      this.classList.toggle("ri-eye-off-line");
+      this.classList.toggle("ri-eye-line");
+    });
+  });
+</script>
+ <!-- Change Password Ends -->
+
+ <script>
+  // Select the input and button elements
+  const copyInput = document.getElementById('copyInput');
+  const copyButton = document.getElementById('copyButton');
+
+  // Add an event listener to the button
+  copyButton.addEventListener('click', () => {
+    // Select the text in the input
+    copyInput.select();
+    copyInput.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text to the clipboard
+    navigator.clipboard
+      .writeText(copyInput.value)
+      .then(() => {
+        alert('Copied to clipboard: ' + copyInput.value);
+      })
+      .catch((err) => {
+        console.error('Error copying text: ', err);
+      });
+  });
+</script>
+<!-- image upload starts -->
+<script>
+  document
+    .getElementById("formFile")
+    .addEventListener("change", function () {
+      const fileName = this.files[0]?.name || "No file chosen";
+      this.nextElementSibling.querySelector(".file-name").textContent =
+        fileName;
+    });
+</script>
+<!-- image upload ends -->
+ <!--  -->
+ <script>
+  // Select the buttons
+  const depositButton = document.getElementById('depositButton');
+  const withdrawButton = document.getElementById('withdrawButton');
+
+  // Function to handle the active state
+  function setActiveButton(activeButton) {
+    // Remove active class from both buttons
+    depositButton.classList.remove('btn_active');
+    withdrawButton.classList.remove('btn_active');
+
+    // Add active class to the clicked button
+    activeButton.classList.add('btn_active');
+  }
+
+  // Add event listeners to the buttons
+  depositButton.addEventListener('click', () => setActiveButton(depositButton));
+  withdrawButton.addEventListener('click', () => setActiveButton(withdrawButton));
+</script>
+<!--  -->
+</body>
+
+</html>

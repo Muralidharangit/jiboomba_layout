@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sample Page</title>
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end -->
+    <style>
+   
+
+   
+    </style>
+  </head>
+  <body>
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <a href="./profile.html">
+        <button class="go_back_btn">
+          <i class="ri-arrow-left-line text-white fs-20"></i>
+        </button>
+      </a>
+    </div>
+    <div class="border-bottom opacity-50"></div>
+
+    <section class="container vh-100">
+      <div class="h-100">
+        <!-- Nav starts -->
+
+        <!-- Nav Ends -->
+        <!-- ======================================================================= -->
+        <!-- Header 2 buttons Starts -->
+        <div class="pt-3 pb-2">
+          <div class="container">
+            <!-- card 1 Starts -->
+            <div
+              class="card bg_light_grey br-grey account_input-textbox-container my-3"
+            >
+              <div
+                class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+              >
+                <h5 class="text-center mb-0">Profile Details</h5>
+              </div>
+              <div class="card-body">
+                <div class="">
+                  <div class="avatar-upload">
+                    <div class="avatar-edit">
+                      <input
+                        type="file"
+                        id="imageUpload"
+                        accept=".png, .jpg, .jpeg"
+                      />
+                      <label for="imageUpload">
+                        <i
+                          class="ri-pencil-fill position-relative"
+                          style="left: 8px; top: 3px"
+                        ></i>
+                      </label>
+                    </div>
+                    <div class="avatar-preview">
+                      <div
+                        id="imagePreview"
+                        style="
+                          background-image: url('https://img.freepik.com/free-photo/cartoon-man-wearing-glasses_23-2151136831.jpg?semt=ais_hybrid');
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <form class="form-control_container" action="">
+                  <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Name</label>
+                  </div>
+                  <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Enter Email</label>
+                  </div>
+                  <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Mobile Number</label>
+                  </div>
+
+                  <button class="btn btn-login w-100 mb-3 mt-3">
+                    Update Data
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- Card 1 Ends -->
+            <!-- card 1 Starts -->
+            <div
+              class="card bg_light_grey br-grey account_input-textbox-container my-3"
+            >
+              <div
+                class="p-3 red-gradient rounded-top d-flex justify-content-center align-items-center"
+              >
+                <h5 class="text-center mb-0">Change Password</h5>
+              </div>
+              <div class="card-body">
+                <form class="form-control_container" action="">
+                  <div class="input-field">
+                    <input
+                      required=""
+                      class="input position-relative"
+                      type="password"
+                      id="oldPassword"
+                    />
+                    <i
+                      class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                      style="font-size: 1.5rem; cursor: pointer"
+                    ></i>
+                    <label class="label" for="oldPassword">Old Password</label>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      required=""
+                      class="input position-relative"
+                      type="password"
+                      id="newPassword"
+                    />
+                    <i
+                      class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                      style="font-size: 1.5rem; cursor: pointer"
+                    ></i>
+                    <label class="label" for="newPassword">New Password</label>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      required=""
+                      class="input position-relative"
+                      type="password"
+                      id="repeatPassword"
+                    />
+                    <i
+                      class="position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer ri-eye-off-line togglePassword"
+                      style="font-size: 1.5rem; cursor: pointer"
+                    ></i>
+                    <label class="label" for="repeatPassword"
+                      >Repeat Password</label
+                    >
+                  </div>
+                  <button class="btn btn-login w-100 mb-3 mt-3">
+                    Change Password
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- Card 1 Ends -->
+          </div>
+        </div>
+
+        <!-- Header  Ends -->
+      </div>
+    </section>
+
+    <!-- Button trigger modal -->
+
+    <!-- js part -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+    <!-- js part end -->
+
+    <script>
+      // Attach event listeners to all eye icons
+      document.querySelectorAll(".togglePassword").forEach((toggleIcon) => {
+        toggleIcon.addEventListener("click", function () {
+          const passwordField = this.previousElementSibling; // Get the corresponding password field
+          const isPasswordVisible = passwordField.type === "password";
+
+          // Toggle password visibility
+          passwordField.type = isPasswordVisible ? "text" : "password";
+
+          // Change the icon
+          this.classList.toggle("ri-eye-off-line");
+          this.classList.toggle("ri-eye-line");
+        });
+      });
+    </script>
+    <script>
+      const imageUpload = document.getElementById("imageUpload");
+      const imagePreview = document.getElementById("imagePreview");
+
+      imageUpload.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+
+          reader.addEventListener("load", function () {
+            imagePreview.style.backgroundImage = `url(${this.result})`;
+          });
+
+          reader.readAsDataURL(file); // Convert the file to a base64 string
+        }
+      });
+    </script>
+  </body>
+</html>

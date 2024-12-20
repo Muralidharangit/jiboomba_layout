@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+
+    <!-- Link styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css" />
+
+    <!-- icon style -->
+    <link rel="stylesheet" href="../font/remixicon.css" />
+    <!-- Link styles end-->
+
+  </head>
+  <body>
+
+    <section class="container vh-100 position-relative overflow-hidden">
+
+      <div class="pt-3 pb-2 h-100">
+        <div class="logo d-flex justify-content-center mb-2">
+          <img src="../img/fav.png" alt class="" width="75%">
+        </div>
+
+        <div class="p-3 h-100 d-flex justify-content-start flex-column">
+          <div class="py-4 pt-0">
+            <div class="section-head">
+              <h3 class="title"> Sign In</h3>
+              <p class="text-white">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Laborum, dolorem.
+              </p>
+            </div>
+          </div>
+
+          <div class="form">
+            <div class="login-form mb-3">
+              <form>
+                <div class="input-groups mb-4">
+                  <label for="exampleInputEmail1"
+                    class="form-label text-white">Email</label>
+                  <input type="email" class="form-control"
+                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="input-groups mb-4 position-relative">
+                  <label for="exampleInputPassword1"
+                    class="form-label text-white">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    aria-describedby="passwordToggle">
+                  <i
+                    class="ri-eye-off-line position-absolute top-60 translate-middle-y end-0 pe-3 text-white cursor-pointer"
+                    id="togglePassword"
+                    style="font-size: 1.5rem; cursor: pointer;">
+                  </i>
+                </div>
+                <a href="./forgotpass.html">
+                <p class="form-text text-end  m-0 fs-15 text-red">Forgot
+                  Password? </p></a>
+
+                <button type="button" class="btn btn-login w-100 mt-5 mb-3"
+                  onclick="window.location.href='./index.html'"> Login <i
+                    class="ri-expand-right-line text-white fs-20"></i></button>
+
+                    
+              <div class="text-center">
+                <p>New to Jibooma? <a href="register.html"
+                    class="link ms-2 fs-16 text-red">Create Account</a></p>
+              </div>
+              </form>
+
+            </div>
+            
+
+          </div>
+         
+
+
+          <div class="text-center  bottom-0 w-100 my-5 start-0">
+            
+            <div class="icon-social">
+              <div
+                class="d-flex justify-content-center  text-white fs-25 gap-3">
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-linkedin-box-line"></i>
+                <i class="ri-twitter-x-line"></i>
+                <i class="ri-youtube-line"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!-- js part -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+  const passwordField = document.getElementById('exampleInputPassword1');
+  const isPasswordVisible = passwordField.type === 'password';
+  
+  // Toggle password visibility
+  passwordField.type = isPasswordVisible ? 'text' : 'password';
+  
+  // Change the icon
+  this.classList.toggle('ri-eye-off-line');
+  this.classList.toggle('ri-eye-line');
+});
+
+      </script>
+    <!-- js part end -->
+
+  </body>
+</html>
