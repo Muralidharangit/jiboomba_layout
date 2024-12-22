@@ -344,12 +344,12 @@ button.btn.btn-index {
   right: 0;
   left: 0;
   z-index: 99999;
-  background: #161616;
+  background:#323738;
   border-bottom: 1px solid #cccccc30;
   padding: 0 10px;
 }
 
-@media(min-width:320px) and (max-width:340px) {
+@media(min-width:320px) and (max-width:350px) {
   button.btn.btn-index {
       width: 80px !important;
 
@@ -358,6 +358,56 @@ button.btn.btn-index {
   .logo_brand {
       width: 110px;
   }
+
+  .unique-footer ul li a img {
+    width: 20px;
+}
+.unique-footer ul li p {
+  font-size: 10px !important;
+}
+.unique-footer ul li a  p {
+  font-size: 10px ;
+}
+
+.unique-footer ul li  img {
+  width: 20px;
+}
+
+}
+
+@media(min-width:351px) and (max-width:400px) {
+  
+  .unique-footer ul li a img {
+    width: 23px;
+}
+.unique-footer ul li p {
+  font-size: 12px !important;
+}
+.unique-footer ul li a  p {
+  font-size: 12px ;
+}
+
+.unique-footer ul li  img {
+  width: 23px;
+}
+
+}
+
+@media(min-width:401px)  {
+  
+  .unique-footer ul li a img {
+    width: 26px;
+}
+.unique-footer ul li p {
+  font-size: 13px !important;
+}
+.unique-footer ul li a  p {
+  font-size: 13px ;
+}
+
+.unique-footer ul li  img {
+  width: 26px;
+}
 
 }
 
@@ -598,7 +648,7 @@ left: 0;
 width: 100%;
 background-color: #161616; /* Dark background color */
 box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-height: 70px;
+/* height: 70px; */
 align-items: center;
 display: flex;
 }
@@ -635,10 +685,11 @@ position: fixed;
 bottom: -60px; /* Initially hidden */
 left: 0;
 width: 100%;
-background-color:#161616;
+background-color:#323738;
 box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 transition: bottom 0.5s ease-in-out; /* Smooth transition */
 z-index: 1000;
+border-radius: 12px 12px 0 0;
 }
 
 .unique-footer ul {
@@ -1974,3 +2025,6 @@ border-top-left-radius: 0px !important;
           padding: 6px 15px;
           border-radius: 7px;
         }
+
+
+    
