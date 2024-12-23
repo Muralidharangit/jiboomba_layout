@@ -10,11 +10,7 @@
     <!-- Link styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="../css/swiper.css" /> -->
 
     <!-- icon style -->
@@ -22,26 +18,106 @@
     <!-- Link styles end -->
 
     <style>
+/* STICKY STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header.is-sticky {
+  position: fixed;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  /* padding: 8px 0; */
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.35s ease-out;
+  background: #323738 !important;
+  width: 100%;
+  z-index: 3;
+}
+
+.page-header.is-sticky img {
+  max-width: 80%;
+}
+
+.page-header.is-sticky button {
+  font-size: 14px;
+  padding: 7px 10px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
    </style>
+
+   <style>
+
+ .dot {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 8px;
+	 height: 8px;
+	 background-color: #ce2b37;
+	 border-radius: 50%;
+	 position: relative;
+}
+ .dot:before {
+	 content: "";
+	 width: inherit;
+	 height: inherit;
+	 border: 5px solid #ce2b37;
+	 border-radius: inherit;
+	 position: absolute;
+	 z-index: -10;
+	 opacity: 0;
+	 animation: 2s expand cubic-bezier(0.29, 0, 0, 1) infinite;
+	 animation-delay: 1s;
+}
+ @keyframes expand {
+	/* Starting at 1 to prevent IOS flicker */
+	 1% {
+		 width: 0;
+		 height: 0;
+		 opacity: 1;
+	}
+	 100% {
+		 width: 300%;
+		 height: 300%;
+		 opacity: 0;
+		 border-color: #fff;
+		 background-color: none;
+		 border-width: 2px;
+	}
+}
+ 
+   </style>
+
+
+
 </head>
 
 <body>
     
   <!-- ==================================================================================================================================== -->
     <!-- header-part -->
-    <header class="bgbody-color">
-        <nav class="navbar  fixed-top h-56">
+    <header class="bgbody-color page-header">
+        <nav class="navbar   p-1">
             <div class="container-fluid p-0">
                 <div class="d-flex justify-content-between w-100 align-items-center">
                     <div class="logo_brand">
-                        <a class="navbar-brand m-0" href="#"><img src="../img/logo.png" alt="" srcset=""
-                                width="100%"></a>
+                        <a class="navbar-brand m-0" href="#"><img src="../img/fav.png" alt="" srcset=""
+                                width="65%"></a>
                     </div>
 
                     <div class="d-flex mx-2">
-                      
-                       <div class="user-icon">
+                      <div class="user-icon" style="background: #ffffff0d;">
+
+                        <i class="fa-solid fa-gift text-white fs-12" style="font-size: 18px !important;"></i>
+                        <!-- <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample"> -->
+                       </div>
+                       <div class="user-icon ms-2">
                         <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample">
                        </div>
                       
@@ -59,13 +135,15 @@
 
       <!-- home start -->
       <!------banner-slider------>
-      <div style="margin-top: 80px;" class="position-relative">
+      <div  class="position-relative">
           <swiper-container class="mySwiper" space-between="30"  pagination="true" pagination-clickable="true" autoplay="true">
-              <swiper-slide><img src="../img/slider/1.jpg" alt="Slide 1"></swiper-slide>
-              <swiper-slide><img src="../img//slider/2.jpg" alt="Slide 2"></swiper-slide>
-              <swiper-slide><img src="../img//slider/3.jpg" alt="Slide 3"></swiper-slide>
-              <swiper-slide><img src="../img/4.png" alt="Slide 4"></swiper-slide>
-              <swiper-slide><img src="../img/5.png" alt="Slide 5"></swiper-slide>
+              <swiper-slide><img src="../img/slider/NEW/2.png" alt="Slide 1"></swiper-slide>
+              <swiper-slide><img src="../img//slider/NEW/4.png" alt="Slide 2"></swiper-slide>
+              <swiper-slide><img src="../img//slider/NEW/3.png" alt="Slide 3"></swiper-slide>
+              <swiper-slide><img src="../img/slider/NEW/1.png" alt="Slide 4"></swiper-slide>
+              <swiper-slide><img src="../img/slider/NEW/5.png" alt="Slide 5"></swiper-slide>
+
+              <swiper-slide><img src="../img/slider/3.jpg" alt="Slide 5"></swiper-slide>
           </swiper-container>
           
           
@@ -78,12 +156,105 @@
 
 
 
+           <!-- Marquee runing -->
+           <div>
+
+            <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
+                <div class="d-flex">
+                  <span class="dot "></span>
+                    <h5 class="m-0 ms-2 d-flex align-items-center">Top Trending</h5>
+                  
+                </div>
+               
+
+                 <div>
+                  <a href="./Allgames.html">
+                    <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
+                  </a>
+                 </div>
+             
+            </div>
+
+            <swiper-container
+    class="mySwiper"
+    space-between="5"
+    loop="true"
+    autoplay-delay="0"
+    autoplay-disable-on-interaction="false"
+    speed="3000"
+    slides-per-view="4.5"
+    centered-slides="false"
+    free-mode="true">
+    <swiper-slide>   <div class="game-card-wrapper">
+                        <div class="game-card">
+                            <img src="https://bc.imgix.net/game/image/d9df7d8216.png?_v=4&auto=format&dpr=1.5&w=200"
+                                class="game-card-img" alt="Game 1">
+                        </div>
+                        <div class="game-play-button d-flex flex-column">
+                           
+                            <a href="#" class="btn-play">
+                                <i class="ri-play-fill"></i>
+                            </a>
+                        </div>
+                    </div></swiper-slide>
+    <swiper-slide>   <div class="game-card-wrapper">
+                        <div class="game-card">
+                            <img src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                                class="game-card-img" alt="Game 1">
+                        </div>
+                        <div class="game-play-button">
+                            <a href="#" class="btn-play">
+                                <i class="ri-play-fill"></i>
+                            </a>
+                        </div>
+                    </div></swiper-slide>
+    <swiper-slide>   <div class="game-card-wrapper">
+                        <div class="game-card">
+                            <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200"
+                                class="game-card-img" alt="Game 1">
+                        </div>
+                        <div class="game-play-button">
+                            <a href="#" class="btn-play">
+                                <i class="ri-play-fill"></i>
+                            </a>
+                        </div>
+                    </div></swiper-slide>
+    <swiper-slide>   <div class="game-card-wrapper">
+                        <div class="game-card">
+                            <img src="	https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                                class="game-card-img" alt="Game 1">
+                        </div>
+                        <div class="game-play-button">
+                            <a href="#" class="btn-play">
+                                <i class="ri-play-fill"></i>
+                            </a>
+                        </div>
+                    </div></swiper-slide>
+    <swiper-slide>   <div class="game-card-wrapper">
+                        <div class="game-card">
+                            <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
+                                class="game-card-img" alt="Game 1">
+                        </div>
+                        <div class="game-play-button">
+                            <a href="#" class="btn-play">
+                                <i class="ri-play-fill"></i>
+                            </a>
+                        </div>
+                    </div></swiper-slide>
+</swiper-container>
+
+         </div>
+        <!-- Marquee end -->
+
+
+
+
             <!-- Marquee runing -->
             <div>
 
               <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
                   <div class="d-flex">
-                      <img src="../img/medal (1).png" alt="" srcset="" width="">  <h5 class="m-0 ms-2">Top Trending</h5>
+                    <span class="dot "></span>  <h5 class="m-0 ms-2">Top Trending</h5>
                   </div>
                  
 
@@ -97,7 +268,7 @@
   
               <swiper-container
       class="mySwiper"
-      space-between="15"
+      space-between="7"
       loop="true"
       autoplay-delay="0"
       autoplay-disable-on-interaction="false"
@@ -165,6 +336,72 @@
   
            </div>
           <!-- Marquee end -->
+
+
+
+          <!-- Games Types -->
+
+
+          <div>
+            <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
+              <div class="d-flex">
+                <span class="dot "></span>  <h5 class="m-0 ms-2">Games Type</h5>
+              </div>
+             
+
+               <div>
+                <a href="./Allgames.html">
+                  <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
+                </a>
+               </div>
+           
+          </div>
+            <div class="d-flex gap-2">
+              <div class="card bg-transparent p-1">
+                  <div class="flex-column d-flex">
+                      <span class="text-white fw-500 fs-13">Casino</span>
+                      <img src="	https://bcgame.li/assets/casino-9P3_MIUy.png" alt="" srcset="">
+                  </div>
+              </div>
+              <div class="card bg-transparent p-1">
+                <div class="flex-column d-flex">
+                  <span class="text-white fw-500 fs-13">Sports</span>
+                  <img src="	https://bcgame.li/assets/casino-9P3_MIUy.png" alt="" srcset="">
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="d-flex gap-2">
+              <div class="card bg-transparent p-1">
+                  <div class="flex-column d-flex">
+                      <span class="text-white fw-500 fs-13">Lottery</span>
+                      <img src="https://bcgame.li/assets/racing-BfvulUJj.png" alt="" srcset="">
+                  </div>
+              </div>
+              <div class="card bg-transparent p-1">
+                <div class="flex-column d-flex">
+                  <span class="text-white fw-500 fs-13">Racing</span>
+                  <img src="https://bcgame.li/assets/racing-BfvulUJj.png" alt="" srcset="">
+              </div>
+              </div>
+              <div class="card bg-transparent p-1">
+                <div class="flex-column d-flex">
+                    <span class="text-white fw-500 fs-13">Updown</span>
+                    <img src="https://bcgame.li/assets/racing-BfvulUJj.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="card bg-transparent p-1">
+              <div class="flex-column d-flex justify-content-center">
+                <span class="text-white fw-500 fs-13">Bingo</span>
+                <img src="https://bcgame.li/assets/racing-BfvulUJj.png" alt="" srcset="">
+            </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- games types end -->
   
 
 
@@ -321,7 +558,7 @@
               </div>
 
               <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
+              <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
@@ -336,7 +573,7 @@
               </div>
               <!-- card 1 end -->
               <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
+              <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200
@@ -352,7 +589,7 @@
               </div>
               <!-- card 1 end -->
               <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
+              <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
@@ -367,7 +604,7 @@
               </div>
               <!-- card 1 end -->
               <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
+              <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
@@ -383,7 +620,7 @@
               <!-- card 1 end -->
 
                 <!-- Card 1 -->
-                <div class="col-md-4 col-sm-6 col-6">
+                <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
@@ -398,7 +635,7 @@
               </div>
               <!-- card 1 end -->
               <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
+              <div class="col-md-4 col-sm-6 col-6 px-2">
                   <div class="game-card-wrapper">
                       <div class="game-card">
                           <img src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&auto=format&dpr=1.5&w=200"
@@ -3732,16 +3969,16 @@
 
   <script>
 
-document.addEventListener('scroll', () => {
-const footer = document.querySelector('.unique-footer');
-const scrollY = window.scrollY;
+// document.addEventListener('scroll', () => {
+// const footer = document.querySelector('.unique-footer');
+// const scrollY = window.scrollY;
 
-if (scrollY > 100) { // Adjust threshold as needed
-  footer.style.bottom = '0'; // Footer slides up
-} else {
-  footer.style.bottom = '-60px'; // Footer slides back down
-}
-});
+// if (scrollY > 100) { // Adjust threshold as needed
+//   footer.style.bottom = '0'; // Footer slides up
+// } else {
+//   footer.style.bottom = '-60px'; // Footer slides back down
+// }
+// });
 
 
 
@@ -3895,6 +4132,23 @@ if (scrollY > 100) { // Adjust threshold as needed
   // Add event listeners to the buttons
   depositButton.addEventListener('click', () => setActiveButton(depositButton));
   withdrawButton.addEventListener('click', () => setActiveButton(withdrawButton));
+</script>
+
+
+
+<script>
+  const header = document.querySelector(".page-header");
+const toggleClass = "is-sticky";
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > 150) {
+    header.classList.add(toggleClass);
+  } else {
+    header.classList.remove(toggleClass);
+  }
+});
+
 </script>
 <!--  -->
 </body>
