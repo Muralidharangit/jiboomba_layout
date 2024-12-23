@@ -1,8 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Enter New Password</title>
@@ -10,157 +9,180 @@
     <!-- Link styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="../css/swiper.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <!-- icon style -->
-    <link rel="stylesheet" href="../font/remixicon.css" />
-    <!-- Link styles end -->
+    <!-- Swiper Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <style>
-/* STICKY STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-header.is-sticky {
-  position: fixed;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
-  /* padding: 8px 0; */
-  backdrop-filter: blur(10px);
-  animation: slideDown 0.35s ease-out;
-  background: #323738 !important;
-  width: 100%;
-  z-index: 3;
-}
+      /* STICKY STYLES
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+      .page-header.is-sticky {
+        position: fixed;
+        box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+        /* padding: 8px 0; */
+        backdrop-filter: blur(10px);
+        animation: slideDown 0.35s ease-out;
+        background: #323738 !important;
+        width: 100%;
+        z-index: 3;
+      }
 
-.page-header.is-sticky img {
-  max-width: 80%;
-}
+      .page-header.is-sticky img {
+        max-width: 80%;
+      }
 
-.page-header.is-sticky button {
-  font-size: 14px;
-  padding: 7px 10px;
-}
+      .page-header.is-sticky button {
+        font-size: 14px;
+        padding: 7px 10px;
+      }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
 
-   </style>
+    <style>
+      .dot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8px;
+        height: 8px;
+        background-color: #ce2b37;
+        border-radius: 50%;
+        position: relative;
+      }
+      .dot:before {
+        content: "";
+        width: inherit;
+        height: inherit;
+        border: 5px solid #ce2b37;
+        border-radius: inherit;
+        position: absolute;
+        z-index: -10;
+        opacity: 0;
+        animation: 2s expand cubic-bezier(0.29, 0, 0, 1) infinite;
+        animation-delay: 1s;
+      }
+      @keyframes expand {
+        /* Starting at 1 to prevent IOS flicker */
+        1% {
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          width: 300%;
+          height: 300%;
+          opacity: 0;
+          border-color: #fff;
+          background-color: none;
+          border-width: 2px;
+        }
+      }
 
-   <style>
+      .banner_background {
+        z-index: 0;
+        background-color: #e2053873;
+        background: linear-gradient(to bottom, #e55f5f8c, #141313);
+      }
+      /* swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 116px;
+      } */
+      /* test */
+    </style>
+  </head>
 
- .dot {
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 width: 8px;
-	 height: 8px;
-	 background-color: #e4063b;
-	 border-radius: 50%;
-	 position: relative;
-}
- .dot:before {
-	 content: "";
-	 width: inherit;
-	 height: inherit;
-	 border: 5px solid #e4063b;
-	 border-radius: inherit;
-	 position: absolute;
-	 z-index: -10;
-	 opacity: 0;
-	 animation: 2s expand cubic-bezier(0.29, 0, 0, 1) infinite;
-	 animation-delay: 1s;
-}
- @keyframes expand {
-	/* Starting at 1 to prevent IOS flicker */
-	 1% {
-		 width: 0;
-		 height: 0;
-		 opacity: 1;
-	}
-	 100% {
-		 width: 300%;
-		 height: 300%;
-		 opacity: 0;
-		 border-color: #fff;
-		 background-color: none;
-		 border-width: 2px;
-	}
-}
- 
-   </style>
+  <body class="">
+    <div class="h-25 w-100 position-absolute banner_background"></div>
 
-
-
-</head>
-
-<body>
-    
-  <!-- ==================================================================================================================================== -->
     <!-- header-part -->
     <header class="bgbody-color page-header">
-        <nav class="navbar   p-1">
-            <div class="container-fluid p-0">
-                <div class="d-flex justify-content-between w-100 align-items-center">
-                    <div class="logo_brand">
-                        <a class="navbar-brand m-0" href="#"><img src="../img/fav.png" alt="" srcset=""
-                                width="65%"></a>
-                    </div>
-
-                    <div class="d-flex mx-2">
-                      <a href="./Bonus.html">
-                      <div class="user-icon" style="background: #ffffff0d;">
-
-                        <i class="fa-solid fa-gift text-white fs-12" style="font-size: 18px !important;"></i>
-                        <!-- <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample"> -->
-                       </div>
-                      </a>
-                       <div class="user-icon ms-2">
-                        <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample">
-                       </div>
-                      
-                    </div>
-                </div>
-
+      <nav class="navbar p-1">
+        <div class="container-fluid p-0">
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <div class="logo_brand">
+              <a class="navbar-brand m-0" href="#"
+                ><img src="../img/fav.png" alt="" srcset="" width="65%"
+              /></a>
             </div>
-        </nav>
+
+            <div class="d-flex mx-2">
+              <div class="user-icon" style="background: #ffffff0d">
+                <i
+                  class="fa-solid fa-gift text-white fs-12"
+                  style="font-size: 18px !important"
+                ></i>
+                <!-- <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample"> -->
+              </div>
+              <div class="user-icon ms-2">
+                <img
+                  src="../img/icons/man.png"
+                  alt=""
+                  srcset=""
+                  class="w-100"
+                  style="border-radius: 50%"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#Profile_offcanvas"
+                  aria-controls="offcanvasExample"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- hedaer-end -->
+    <section class="container vh-100">
+      <!-- Banner Slider -->
+      <div class="">
+        <swiper-container class="swiper mySwiper mainbanner">
+          <div class="swiper-wrapper h-25 w-100">
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/NEW/2.png" alt="Slide 1" />
+            </swiper-slide>
 
-    
-    <section class="container vh-100 ">
-
-
-      <!-- home start -->
-      <!------banner-slider------>
-      <div  class="position-relative">
-          <swiper-container class="mySwiper" space-between="30"  pagination="true" pagination-clickable="true" autoplay="true">
-              <swiper-slide><img src="../img/slider/NEW/2.png" alt="Slide 1"></swiper-slide>
-              <swiper-slide><img src="../img//slider/NEW/4.png" alt="Slide 2"></swiper-slide>
-              <swiper-slide><img src="../img//slider/NEW/3.png" alt="Slide 3"></swiper-slide>
-              <swiper-slide><img src="../img/slider/NEW/1.png" alt="Slide 4"></swiper-slide>
-              <swiper-slide><img src="../img/slider/NEW/5.png" alt="Slide 5"></swiper-slide>
-
-              <swiper-slide><img src="../img/slider/3.jpg" alt="Slide 5"></swiper-slide>
-          </swiper-container>
-          
-          
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/NEW/4.png" alt="Slide 2" />
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/NEW/3.png" alt="Slide 3" />
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/NEW/1.png" alt="Slide 4" />
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/NEW/5.png" alt="Slide 5" />
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <img src="../img/slider/3.jpg" alt="Slide 6" />
+            </swiper-slide>
+          </div>
+          <div class="swiper-pagination"></div>
+        </swiper-container>
       </div>
-      </div>
-
-
-      <!---------banner-end------>
-      <!-- home end -->
 
 
       
-
-
-
            <!-- Marquee runing -->
            <div>
 
@@ -252,9 +274,147 @@
          </div>
         <!-- Marquee end -->
 
-        
+
+         <!--------top-games-------->
+      <div>
+        <div class="row">
+           
+
+          <div class="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
+              <div class="d-flex align-items-center">
+                  <img src="../img/winner.png" alt="" srcset="" width="">   <h5 class="m-0 mt-1 ms-2">Top Matches</h5>
+              </div>
+            
 
 
+              <div>
+                <a href="./Allgames.html">
+                  <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
+                </a> 
+               </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                      " class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-6 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+
+            <!-- Card 1 -->
+            <div class="col-md-4 col-sm-6 col-6 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+           <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+            <div class="game-card-wrapper">
+                <div class="game-card">
+                    <img src="	https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
+                </div>
+                <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                        <i class="ri-play-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- card 1 end -->
+
+        <!-- Card 1 -->
+        <div class="col-md-4 col-sm-6 col-4 px-1">
+          <div class="game-card-wrapper">
+              <div class="game-card">
+                  <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
+              </div>
+              <div class="game-play-button">
+                  <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- card 1 end -->
+
+
+          <!-- Repeat cards with the same structure for Card 2, Card 3, and Card 4 -->
+      </div>
+      </div>
+      <!-----top-games-end------->
 
 
 
@@ -327,211 +487,31 @@
           </div>
 
           <!-- games types end -->
-
-            <!-- Marquee runing -->
-            <div>
-
-              <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
-                  <div class="d-flex">
-                    <span class="dot "></span>  <h5 class="m-0 ms-2">All  Games</h5>
-                  </div>
-                 
-
-                   <div>
-                    <a href="./Allgames.html">
-                      <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
-                    </a>
-                   </div>
-               
-              </div>
-  
-              <swiper-container
-      class="mySwiper"
-      space-between="7"
-      loop="true"
-      autoplay-delay="0"
-      autoplay-disable-on-interaction="false"
-      speed="3000"
-      slides-per-view="2.5"
-      centered-slides="false"
-      free-mode="true">
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/d9df7d8216.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button d-flex flex-column">
-                             
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="	https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-  </swiper-container>
-  
-           </div>
-          <!-- Marquee end -->
-
-
-
-
-
           
-    
-         <!--------top-games-------->
-         <div>
-          <div class="row">
-             
-  
-            <div class="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
-                <div class="d-flex align-items-center">
-                    <img src="../img/winner.png" alt="" srcset="" width="">   <h5 class="m-0 mt-1 ms-2">Top Matches</h5>
-                </div>
-              
-  
-  
-                <div>
-                  <a href="./Allgames.html">
-                    <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
-                  </a> 
-                 </div>
-            </div>
-  
-            <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-4 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-            <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-4 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
-                        " class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-            <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-4 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-            <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-6 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-  
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-            <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-4 px-1">
-                <div class="game-card-wrapper">
-                    <div class="game-card">
-                        <img src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
-                    </div>
-                    <div class="game-play-button">
-                        <a href="#" class="btn-play">
-                            <i class="ri-play-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1 end -->
-             <!-- Card 1 -->
-            <div class="col-md-4 col-sm-6 col-4 px-1">
+      <!--------top-games-------->
+      <div>
+        <div class="row">
+           
+
+          <div class="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
+              <div class="d-flex align-items-center">
+                  <img src="../img/winner.png" alt="" srcset="" width="">   <h5 class="m-0 mt-1 ms-2">Top Matches</h5>
+              </div>
+            
+
+
+              <div>
+                <a href="./Allgames.html">
+                  <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
+                </a> 
+               </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
               <div class="game-card-wrapper">
                   <div class="game-card">
-                      <img src="	https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
+                      <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
                   </div>
                   <div class="game-play-button">
                       <a href="#" class="btn-play">
@@ -541,12 +521,55 @@
               </div>
           </div>
           <!-- card 1 end -->
-  
           <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                      " class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+         
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 col-4 px-1">
+              <div class="game-card-wrapper">
+                  <div class="game-card">
+                      <img src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200" class="game-card-img" alt="Game 1">
+                  </div>
+                  <div class="game-play-button">
+                      <a href="#" class="btn-play">
+                          <i class="ri-play-fill"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- card 1 end -->
+           <!-- Card 1 -->
           <div class="col-md-4 col-sm-6 col-4 px-1">
             <div class="game-card-wrapper">
                 <div class="game-card">
-                    <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
+                    <img src="	https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
                 </div>
                 <div class="game-play-button">
                     <a href="#" class="btn-play">
@@ -556,12 +579,28 @@
             </div>
         </div>
         <!-- card 1 end -->
-  
-  
-            <!-- Repeat cards with the same structure for Card 2, Card 3, and Card 4 -->
-        </div>
-        </div>
-        <!-----top-games-end------->
+
+        <!-- Card 1 -->
+        <div class="col-md-4 col-sm-6 col-4 px-1">
+          <div class="game-card-wrapper">
+              <div class="game-card">
+                  <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200" class="game-card-img" alt="Game 1">
+              </div>
+              <div class="game-play-button">
+                  <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- card 1 end -->
+
+
+          <!-- Repeat cards with the same structure for Card 2, Card 3, and Card 4 -->
+      </div>
+      </div>
+      <!-----top-games-end------->
+
 
 
 
@@ -588,7 +627,7 @@
               <div class="bouns_sec p-2">
                   <div class="card bonus_card">
                       <div class="card-body p-0">
-                          <div class="bonus_card_sec" style="background:linear-gradient(238.08deg, rgb(105, 240, 255) 0%, rgb(35, 138, 255) 33%, rgb(17, 107, 209) 65%, rgb(0, 55, 117) 100%)" >
+                          <div class="bonus_card_sec">
                               <!-- Top section with text and image -->
                               <div class="bonus_sec_top p-4 py-2">
                                   <div class="bonus_sec_content">
@@ -702,7 +741,95 @@
 
 
      
-            
+              <!-- Marquee runing -->
+              <div>
+
+                <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
+                    <div class="d-flex">
+                      <span class="dot "></span>  <h5 class="m-0 ms-2">All  Games</h5>
+                    </div>
+                   
+  
+                     <div>
+                      <a href="./Allgames.html">
+                        <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
+                      </a>
+                     </div>
+                 
+                </div>
+    
+                <swiper-container
+        class="mySwiper"
+        space-between="7"
+        loop="true"
+        autoplay-delay="0"
+        autoplay-disable-on-interaction="false"
+        speed="3000"
+        slides-per-view="2.5"
+        centered-slides="false"
+        free-mode="true">
+        <swiper-slide>   <div class="game-card-wrapper">
+                            <div class="game-card">
+                                <img src="https://bc.imgix.net/game/image/d9df7d8216.png?_v=4&auto=format&dpr=1.5&w=200"
+                                    class="game-card-img" alt="Game 1">
+                            </div>
+                            <div class="game-play-button d-flex flex-column">
+                               
+                                <a href="#" class="btn-play">
+                                    <i class="ri-play-fill"></i>
+                                </a>
+                            </div>
+                        </div></swiper-slide>
+        <swiper-slide>   <div class="game-card-wrapper">
+                            <div class="game-card">
+                                <img src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                                    class="game-card-img" alt="Game 1">
+                            </div>
+                            <div class="game-play-button">
+                                <a href="#" class="btn-play">
+                                    <i class="ri-play-fill"></i>
+                                </a>
+                            </div>
+                        </div></swiper-slide>
+        <swiper-slide>   <div class="game-card-wrapper">
+                            <div class="game-card">
+                                <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200"
+                                    class="game-card-img" alt="Game 1">
+                            </div>
+                            <div class="game-play-button">
+                                <a href="#" class="btn-play">
+                                    <i class="ri-play-fill"></i>
+                                </a>
+                            </div>
+                        </div></swiper-slide>
+        <swiper-slide>   <div class="game-card-wrapper">
+                            <div class="game-card">
+                                <img src="	https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                                    class="game-card-img" alt="Game 1">
+                            </div>
+                            <div class="game-play-button">
+                                <a href="#" class="btn-play">
+                                    <i class="ri-play-fill"></i>
+                                </a>
+                            </div>
+                        </div></swiper-slide>
+        <swiper-slide>   <div class="game-card-wrapper">
+                            <div class="game-card">
+                                <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
+                                    class="game-card-img" alt="Game 1">
+                            </div>
+                            <div class="game-play-button">
+                                <a href="#" class="btn-play">
+                                    <i class="ri-play-fill"></i>
+                                </a>
+                            </div>
+                        </div></swiper-slide>
+    </swiper-container>
+    
+             </div>
+            <!-- Marquee end -->
+  
+  
 
 
 
@@ -4088,210 +4215,255 @@
 <!-- Modal Ends -->
 
 
-  <!-- js part -->
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script src="../js/swiper.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+    </section>
 
-  <script>
-      const swiper = new Swiper('.mySwiper', {
-        spaceBetween: 30, // Space between slides
+    <!-- Scripts -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper Script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="../js/swiper.js"></script>
+    
+
+    <script>
+      const backgroundColors = [
+        "linear-gradient(to bottom, #e55f5f8c, #141313)",
+        "linear-gradient(rgb(59 39 155), rgb(0 0 0 / 46%))",
+        "linear-gradient(rgb(254 236 136 / 62%), rgb(19, 19, 20))",
+        "linear-gradient(rgb(136 64 241 / 74%), rgb(19, 19, 19))",
+        "linear-gradient(rgb(135 10 128 / 95%), rgb(49, 49, 49))",
+        "linear-gradient(rgb(38 199 138 / 55%), rgb(9 8 9))",
+      ];
+
+      const swiper = new Swiper(".mySwiper.mainbanner", {
+        spaceBetween: 30,
         autoplay: {
-          delay: 3000, // Time between slides in milliseconds (30000ms = 30 seconds)
-          disableOnInteraction: false, // This ensures autoplay doesn't stop when interacting with the slider
+          delay: 3000,
+          disableOnInteraction: true,
         },
-        scrollbar: {
-          hide: true, // Hides the scrollbar 
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        on: {
+          slideChange: function () {
+            // Get the active slide index
+            const activeIndex = this.activeIndex;
+
+            // Update the background color for the banner
+            const bannerBackground =
+              document.querySelector(".banner_background");
+            if (bannerBackground) {
+              bannerBackground.style.background = backgroundColors[activeIndex];
+            }
+          },
+          init: function () {
+            // Set the initial background color
+            const activeIndex = this.activeIndex;
+            const bannerBackground =
+              document.querySelector(".banner_background");
+            if (bannerBackground) {
+              bannerBackground.style.background = backgroundColors[activeIndex];
+            }
+          },
         },
       });
     </script>
+   <script>
 
-  <!-- js part end -->
-
-  <script>
-
-// document.addEventListener('scroll', () => {
-// const footer = document.querySelector('.unique-footer');
-// const scrollY = window.scrollY;
-
-// if (scrollY > 100) { // Adjust threshold as needed
-//   footer.style.bottom = '0'; // Footer slides up
-// } else {
-//   footer.style.bottom = '-60px'; // Footer slides back down
-// }
-// });
-
-
-
-  </script>
-<script>
-  const offcanvasStack = [];
-  
-  // Add event listeners to all offcanvases dynamically
-  document.querySelectorAll('.offcanvas').forEach((offcanvas) => {
-    // When an offcanvas is shown, push its ID to the stack
-    offcanvas.addEventListener('show.bs.offcanvas', (event) => {
-      const activeOffcanvas = document.querySelector('.offcanvas.show');
-      if (activeOffcanvas && offcanvas.id !== 'Profile_offcanvas') {
-        // Only add to the stack if it's not the Profile Offcanvas
-        offcanvasStack.push(activeOffcanvas.id);
-      }
-    });
-  
-    // When an offcanvas is hidden, handle closing or going back to the previous one
-    offcanvas.addEventListener('hidden.bs.offcanvas', (event) => {
-      if (offcanvas.id === 'menuOffcanva') {
-        // If the menuOffcanva is closed, close all other open offcanvases
-        document.querySelectorAll('.offcanvas.show').forEach((openOffcanvas) => {
-          const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(openOffcanvas);
-          if (bootstrapOffcanvas) {
-            bootstrapOffcanvas.hide();
+    // document.addEventListener('scroll', () => {
+    // const footer = document.querySelector('.unique-footer');
+    // const scrollY = window.scrollY;
+    
+    // if (scrollY > 100) { // Adjust threshold as needed
+    //   footer.style.bottom = '0'; // Footer slides up
+    // } else {
+    //   footer.style.bottom = '-60px'; // Footer slides back down
+    // }
+    // });
+    
+    
+    
+      </script>
+    <script>
+      const offcanvasStack = [];
+      
+      // Add event listeners to all offcanvases dynamically
+      document.querySelectorAll('.offcanvas').forEach((offcanvas) => {
+        // When an offcanvas is shown, push its ID to the stack
+        offcanvas.addEventListener('show.bs.offcanvas', (event) => {
+          const activeOffcanvas = document.querySelector('.offcanvas.show');
+          if (activeOffcanvas && offcanvas.id !== 'Profile_offcanvas') {
+            // Only add to the stack if it's not the Profile Offcanvas
+            offcanvasStack.push(activeOffcanvas.id);
           }
         });
-  
-        // Clear the stack and reset styles
-        offcanvasStack.length = 0;
-        resetBodyStyles();
-      } else if (offcanvas.id === 'Profile_offcanvas') {
-        // If the Profile Offcanvas is closed, clear the stack and reset body styles
-        offcanvasStack.length = 0;
-        resetBodyStyles();
-      } else {
-        // Otherwise, restore the previous offcanvas if there are any in the stack
-        if (offcanvasStack.length > 0) {
-          const previousOffcanvasId = offcanvasStack.pop();
-          const previousOffcanvas = document.getElementById(previousOffcanvasId);
-          if (previousOffcanvas) {
-            const bootstrapOffcanvas = new bootstrap.Offcanvas(previousOffcanvas);
-            bootstrapOffcanvas.show();
+      
+        // When an offcanvas is hidden, handle closing or going back to the previous one
+        offcanvas.addEventListener('hidden.bs.offcanvas', (event) => {
+          if (offcanvas.id === 'menuOffcanva') {
+            // If the menuOffcanva is closed, close all other open offcanvases
+            document.querySelectorAll('.offcanvas.show').forEach((openOffcanvas) => {
+              const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(openOffcanvas);
+              if (bootstrapOffcanvas) {
+                bootstrapOffcanvas.hide();
+              }
+            });
+      
+            // Clear the stack and reset styles
+            offcanvasStack.length = 0;
+            resetBodyStyles();
+          } else if (offcanvas.id === 'Profile_offcanvas') {
+            // If the Profile Offcanvas is closed, clear the stack and reset body styles
+            offcanvasStack.length = 0;
+            resetBodyStyles();
+          } else {
+            // Otherwise, restore the previous offcanvas if there are any in the stack
+            if (offcanvasStack.length > 0) {
+              const previousOffcanvasId = offcanvasStack.pop();
+              const previousOffcanvas = document.getElementById(previousOffcanvasId);
+              if (previousOffcanvas) {
+                const bootstrapOffcanvas = new bootstrap.Offcanvas(previousOffcanvas);
+                bootstrapOffcanvas.show();
+              }
+            } else {
+              // If no more offcanvases are in the stack, show the Profile Offcanvas
+              const profileOffcanvas = document.getElementById('Profile_offcanvas');
+              if (profileOffcanvas) {
+                const bootstrapOffcanvas = new bootstrap.Offcanvas(profileOffcanvas);
+                bootstrapOffcanvas.show();
+              }
+            }
           }
+        });
+      });
+      
+      // Function to reset body styles
+      function resetBodyStyles() {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+      </script>
+      
+    
+    <!-- read More Starts -->
+    <script>
+      function toggleText(event) {
+        const button = event.target; // The button that was clicked
+        const cardBody = button.closest(".card-body"); // Find the closest card-body
+        const content = cardBody.querySelector(".content"); // Find the content within the card-body
+    
+        if (content.style.maxHeight === "3.9rem") {
+          content.style.maxHeight = "none"; // Expand to show full content
+          button.textContent = "Show Less";
         } else {
-          // If no more offcanvases are in the stack, show the Profile Offcanvas
-          const profileOffcanvas = document.getElementById('Profile_offcanvas');
-          if (profileOffcanvas) {
-            const bootstrapOffcanvas = new bootstrap.Offcanvas(profileOffcanvas);
-            bootstrapOffcanvas.show();
-          }
+          content.style.maxHeight = "3.9rem"; // Collapse to show less content
+          button.textContent = "Read More";
         }
       }
-    });
-  });
-  
-  // Function to reset body styles
-  function resetBodyStyles() {
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
-  }
-  </script>
-  
-
-<!-- read More Starts -->
-<script>
-  function toggleText(event) {
-    const button = event.target; // The button that was clicked
-    const cardBody = button.closest(".card-body"); // Find the closest card-body
-    const content = cardBody.querySelector(".content"); // Find the content within the card-body
-
-    if (content.style.maxHeight === "3.9rem") {
-      content.style.maxHeight = "none"; // Expand to show full content
-      button.textContent = "Show Less";
-    } else {
-      content.style.maxHeight = "3.9rem"; // Collapse to show less content
-      button.textContent = "Read More";
-    }
-  }
-</script>
-<!-- read More Ends -->
- <!-- Change Password Starts -->
- <script>
-  // Attach event listeners to all eye icons
-  document.querySelectorAll(".togglePassword").forEach((toggleIcon) => {
-    toggleIcon.addEventListener("click", function () {
-      const passwordField = this.previousElementSibling; // Get the corresponding password field
-      const isPasswordVisible = passwordField.type === "password";
-
-      // Toggle password visibility
-      passwordField.type = isPasswordVisible ? "text" : "password";
-
-      // Change the icon
-      this.classList.toggle("ri-eye-off-line");
-      this.classList.toggle("ri-eye-line");
-    });
-  });
-</script>
- <!-- Change Password Ends -->
-
- <script>
-  // Select the input and button elements
-  const copyInput = document.getElementById('copyInput');
-  const copyButton = document.getElementById('copyButton');
-
-  // Add an event listener to the button
-  copyButton.addEventListener('click', () => {
-    // Select the text in the input
-    copyInput.select();
-    copyInput.setSelectionRange(0, 99999); // For mobile devices
-
-    // Copy the text to the clipboard
-    navigator.clipboard
-      .writeText(copyInput.value)
-      .then(() => {
-        alert('Copied to clipboard: ' + copyInput.value);
-      })
-      .catch((err) => {
-        console.error('Error copying text: ', err);
+    </script>
+    <!-- read More Ends -->
+     <!-- Change Password Starts -->
+     <script>
+      // Attach event listeners to all eye icons
+      document.querySelectorAll(".togglePassword").forEach((toggleIcon) => {
+        toggleIcon.addEventListener("click", function () {
+          const passwordField = this.previousElementSibling; // Get the corresponding password field
+          const isPasswordVisible = passwordField.type === "password";
+    
+          // Toggle password visibility
+          passwordField.type = isPasswordVisible ? "text" : "password";
+    
+          // Change the icon
+          this.classList.toggle("ri-eye-off-line");
+          this.classList.toggle("ri-eye-line");
+        });
       });
-  });
-</script>
-<!-- image upload starts -->
-<script>
-  document
-    .getElementById("formFile")
-    .addEventListener("change", function () {
-      const fileName = this.files[0]?.name || "No file chosen";
-      this.nextElementSibling.querySelector(".file-name").textContent =
-        fileName;
+    </script>
+     <!-- Change Password Ends -->
+    
+     <script>
+      // Select the input and button elements
+      const copyInput = document.getElementById('copyInput');
+      const copyButton = document.getElementById('copyButton');
+    
+      // Add an event listener to the button
+      copyButton.addEventListener('click', () => {
+        // Select the text in the input
+        copyInput.select();
+        copyInput.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the text to the clipboard
+        navigator.clipboard
+          .writeText(copyInput.value)
+          .then(() => {
+            alert('Copied to clipboard: ' + copyInput.value);
+          })
+          .catch((err) => {
+            console.error('Error copying text: ', err);
+          });
+      });
+    </script>
+    <!-- image upload starts -->
+    <script>
+      document
+        .getElementById("formFile")
+        .addEventListener("change", function () {
+          const fileName = this.files[0]?.name || "No file chosen";
+          this.nextElementSibling.querySelector(".file-name").textContent =
+            fileName;
+        });
+    </script>
+    <!-- image upload ends -->
+     <!--  -->
+     <script>
+      // Select the buttons
+      const depositButton = document.getElementById('depositButton');
+      const withdrawButton = document.getElementById('withdrawButton');
+    
+      // Function to handle the active state
+      function setActiveButton(activeButton) {
+        // Remove active class from both buttons
+        depositButton.classList.remove('btn_active');
+        withdrawButton.classList.remove('btn_active');
+    
+        // Add active class to the clicked button
+        activeButton.classList.add('btn_active');
+      }
+    
+      // Add event listeners to the buttons
+      depositButton.addEventListener('click', () => setActiveButton(depositButton));
+      withdrawButton.addEventListener('click', () => setActiveButton(withdrawButton));
+    </script>
+    
+    
+    
+    <script>
+      const header = document.querySelector(".page-header");
+    const toggleClass = "is-sticky";
+    
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 150) {
+        header.classList.add(toggleClass);
+      } else {
+        header.classList.remove(toggleClass);
+      }
     });
-</script>
-<!-- image upload ends -->
- <!--  -->
- <script>
-  // Select the buttons
-  const depositButton = document.getElementById('depositButton');
-  const withdrawButton = document.getElementById('withdrawButton');
-
-  // Function to handle the active state
-  function setActiveButton(activeButton) {
-    // Remove active class from both buttons
-    depositButton.classList.remove('btn_active');
-    withdrawButton.classList.remove('btn_active');
-
-    // Add active class to the clicked button
-    activeButton.classList.add('btn_active');
-  }
-
-  // Add event listeners to the buttons
-  depositButton.addEventListener('click', () => setActiveButton(depositButton));
-  withdrawButton.addEventListener('click', () => setActiveButton(withdrawButton));
-</script>
-
-
-
-<script>
-  const header = document.querySelector(".page-header");
-const toggleClass = "is-sticky";
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > 150) {
-    header.classList.add(toggleClass);
-  } else {
-    header.classList.remove(toggleClass);
-  }
-});
-
-</script>
-<!--  -->
-</body>
-
-</html>
+    
+    </script>
+      <script>
+        const swiper2 = new Swiper('.mySwiper', {
+          spaceBetween: 30, // Space between slides
+          autoplay: {
+            delay: 3000, // Time between slides in milliseconds (30000ms = 30 seconds)
+            disableOnInteraction: false, // This ensures autoplay doesn't stop when interacting with the slider
+          },
+          scrollbar: {
+            hide: true, // Hides the scrollbar
+          },
+        });
+      </script>
+    <!--  -->
+    </body>
+    
+    </html>
