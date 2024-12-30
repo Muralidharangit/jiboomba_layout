@@ -670,13 +670,13 @@
   class="offcanvas offcanvas_bg offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
-  id="offcanvasWithBothOptions"
-  aria-labelledby="offcanvasWithBothOptionsLabel"
+  id="menuOffcanva"
+  aria-labelledby=" menuOffcanvaLabel"
 >
   <div class="offcanvas-header d-flex justify-content-between">
     <h5
       class="offcanvas-title fs-24 mx-2"
-      id="offcanvasWithBothOptionsLabel"
+      id=" menuOffcanvaLabel"
     >
       Menu
     </h5>
@@ -690,18 +690,36 @@
     </button>
   </div>
   <div class="offcanvas-body">
-    <div class="d-flex align-items-center menu_list_item">
+    <a href="./index.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+      
       <div class="">
-        <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24" />
+        <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24">
+        <span class="mx-3 text-white">Home</span>
       </div>
-      <span class="mx-3 text-white">Home</span>
+   
+      
+
+
+        <!-- <div class="icon-box">
+                <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
     </div>
-    <div class="d-flex align-items-center menu_list_item">
+  </a>
+    <a href="./Allgames.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+     
       <div class="">
         <img src="../img/SIDEMENU/club.png" alt="" srcset="" width="24" />
+        <span class="mx-3 text-white">All Games</span>
       </div>
-      <span class="mx-3 text-white">All Games</span>
+
+      <!-- <div class="icon-box">
+        <i class="ri-arrow-right-s-line text-white"></i>
+      </div> -->
+     
     </div>
+    </a>
 
     <!----accordion---->
     <div class="accordion accordion_sec" id="accordionExample">
@@ -734,9 +752,9 @@
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 1</span>
+              <span class="mx-3 text-white">Spribe</span>
             </div>
           </div>
           <div class="accordion-body game_items_accordion">
@@ -744,9 +762,9 @@
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 2</span>
+              <span class="mx-3 text-white">Turbo Games</span>
             </div>
           </div>
           <div class="accordion-body game_items_accordion">
@@ -754,9 +772,9 @@
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 3</span>
+              <span class="mx-3 text-white">Game Hub</span>
             </div>
           </div>
         </div>
@@ -765,7 +783,8 @@
     <!----accordion end---->
     <div class="menu">
       <!-- Main -->
-      <div class="d-flex align-items-center menu_list_item">
+       <a href="./howtoplay.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
         <div>
           <img
             src="../img/SIDEMENU/mode-portrait.png"
@@ -773,39 +792,88 @@
             srcset=""
             width="24"
           /><!-- Icon for "Main" -->
+          <span class="mx-3 text-white">How to Play</span>
         </div>
-        <span class="mx-3 text-white">How to Play</span>
+<!-- 
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+         -->
       </div>
-
+       </a>
       <!-- LIVE -->
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/deposit.png"
-            alt=""
-            srcset=""
-            width="24"
-          /><!-- Icon for "LIVE" -->
-        </div>
-         <span class="mx-3 text-white">Term & Condition</span>
+      <a href="./terms&condition.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/deposit.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Term & Condition</span>
+  
+          </div>
+        
+       
+        
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
+    </a>
+       <!-- LIVE -->
+       <a href="./Bonus.html">
+       <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/icons/gift.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Bonus</span>
+  
+          </div>
+      
+       
+        
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
+      </div>
+    </a>
 
       <!-- Sports -->
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/money-from-bracket.png"
-            alt=""
-            srcset=""
-            width="24"
-          />
-          <!-- Existing "Sports" Icon -->
-        </div>
-         <span class="mx-3 text-white">Privacy Policy</span>
+      <a href="./privacy_policy.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/money-from-bracket.png"
+              alt=""
+              srcset=""
+              width="24"
+            />
+            <!-- Existing "Sports" Icon -->
+            <span class="mx-3 text-white">Privacy Policy</span>
+          </div>
+         
+        
+       
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
 
+    </a>
       <!-- Cricket -->
-      <div class="d-flex align-items-center menu_list_item">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
         <div>
           <img
             src="../img/SIDEMENU/settings.png"
@@ -813,20 +881,33 @@
             srcset=""
             width="24"
           /><!-- Icon for "Cricket" -->
+          <span class="mx-3 text-white">Settings</span>
         </div>
-        <span class="mx-3 text-white">Settings</span>
+       
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
 
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/address-card.png"
-            alt=""
-            srcset=""
-            width="24"
-          /><!-- Icon for "Cricket" -->
-        </div>
-        <span class="mx-3 text-white">Logout</span>
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        <a href="./index_logout.html">
+          <div>
+            <img
+              src="../img/SIDEMENU/address-card.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "Cricket" -->
+            <span class="mx-3 text-white">Logout</span>
+          </div>
+        </a>
+       
+        
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
     </div>
   </div>

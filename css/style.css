@@ -860,7 +860,7 @@ swiper-slide img {
 }
 
 .game_items_accordion_list span {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .ri-gamepad-line {
@@ -2048,4 +2048,7 @@ span.status-pending.fw-600 {
 }
 li.nav-item button {
   width: max-content !important;
+}
+.accordion-button::after {
+  filter: brightness(42.5) !important;
 }
