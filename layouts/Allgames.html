@@ -1,18 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Enter New Password</title>
+    <title>All Game Page</title>
 
     <!-- Link styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="../css/swiper.css" /> -->
 
     <!-- icon style -->
@@ -104,56 +102,114 @@ input:not(:placeholder-shown) ~ .reset {
   width: 17px;
   margin-top: 3px;
 }
-    </style>
-  </head>
 
+/* STICKY STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header.is-sticky {
+  position: fixed;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  /* padding: 8px 0; */
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.35s ease-out;
+  background: #323738 !important;
+  width: 100%;
+  z-index: 3;
+}
+
+.page-header.is-sticky img {
+  max-width: 80%;
+}
+
+.page-header.is-sticky button {
+  font-size: 14px;
+  padding: 7px 10px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+ .dot {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 8px;
+	 height: 8px;
+	 background-color: #e4063b;
+	 border-radius: 50%;
+	 position: relative;
+}
+ .dot:before {
+	 content: "";
+	 width: inherit;
+	 height: inherit;
+	 border: 5px solid #e4063b;
+	 border-radius: inherit;
+	 position: absolute;
+	 z-index: -10;
+	 opacity: 0;
+	 animation: 2s expand cubic-bezier(0.29, 0, 0, 1) infinite;
+	 animation-delay: 1s;
+}
+ @keyframes expand {
+	/* Starting at 1 to prevent IOS flicker */
+	 1% {
+		 width: 0;
+		 height: 0;
+		 opacity: 1;
+	}
+	 100% {
+		 width: 300%;
+		 height: 300%;
+		 opacity: 0;
+		 border-color: #fff;
+		 background-color: none;
+		 border-width: 2px;
+	}
+}
+  </style>
+</head>
   <body>
- <!-- ==================================================================================================================================== -->
-    <!-- header-part -->
-    <header class="bgbody-color">
-      <nav class="navbar  fixed-top h-56">
-          <div class="container-fluid p-0">
-              <div class="d-flex justify-content-between w-100 align-items-center">
-                  <div class="logo_brand">
-                      <a class="navbar-brand m-0" href="#"><img src="../img/logo.png" alt="" srcset=""
-                              width="100%"></a>
-                  </div>
-
-
-
-
-
-                  <div class="d-flex mx-2">
-                    
-                     <div class="user-icon">
-                      <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample">
-                     </div>
-                    
-                  </div>
+ <!--============================================ -->
+ <header class="bgbody-color page-header">
+  <nav class="navbar   p-1">
+      <div class="container-fluid p-0">
+          <div class="d-flex justify-content-between w-100 align-items-center">
+              <div class="logo_brand">
+                  <a class="navbar-brand m-0" href="#"><img src="../img/fav.png" alt="" srcset="" width="65%"></a>
               </div>
 
+              <div class="d-flex mx-2">
+                <a href="./Bonus.html">
+                <div class="user-icon" style="background: #ffffff0d;">
+
+                  <i class="fa-solid fa-gift text-white fs-12" style="font-size: 18px !important;"></i>
+                  <!-- <img src="../img/icons/man.png" alt="" srcset=""  class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample"> -->
+                 </div>
+                </a>
+                 <div class="user-icon ms-2">
+                  <img src="../img/icons/man.png" alt="" srcset="" class="w-100" style="border-radius: 50%;" data-bs-toggle="offcanvas" data-bs-target="#Profile_offcanvas" aria-controls="offcanvasExample">
+                 </div>
+                
+              </div>
           </div>
-      </nav>
-  </header>
-  <!-- hedaer-end -->
 
-
+      </div>
+  </nav>
+</header>
     <section class="container vh-100">
       <!---------banner-end------>
-
-
-
-
       <!-- home end -->
       <!-- Marquee runing -->
-      <div class="mt-80">
-
-
+      <div class="">
         <!-- Search box -->
-
-
         <div>
-          
   <form class="form">
       <button>
         <i class="ri-search-2-line fs-18"></i>
@@ -174,346 +230,3731 @@ input:not(:placeholder-shown) ~ .reset {
 
 
 
+    <!-- tab nav Starts -->
+    <div>
+      <div class="overflow-x-auto mt-2">
+        <ul
+          class="nav my-2 bounes_filter flex-nowrap bg-transparent"
+          id="myTab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-transparent active"
+              id="all-game"
+              data-bs-toggle="tab"
+              data-bs-target="#all-game-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="all-game-tab-pane"
+              aria-selected="true"
+            >
+              <i class="ri-home-fill pe-1"></i> All Games
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="Hot-games-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#Hot-games-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="Hot-games-tab-pane"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <i class="ri-fire-fill pe-1"></i> Hot Games
+            </button>
+          </li>
 
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="slots-games-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#slots-games-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="slots-games-tab-pane"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <i class="ri-copper-coin-fill pe-1"></i> slots
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="live-casino-games-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#live-casino-games-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="live-casino-games-tab-pane"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <i class="ri-copper-coin-fill pe-1"></i> Live Casino
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="Providers-games-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#Providers-games-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="Providers-games-tab-pane"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <i class="ri-star-fill pe-1"></i> Providers
+            </button>
+          </li>
 
-
-
-
-            <!-- Marquee runing -->
-            <div>
-
-              <div class="top-matches-title d-flex align-items-center justify-content-between   my-3">
-                  <div class="d-flex">
-                      <img src="../img/medal (1).png" alt="" srcset="" width="">  <h5 class="m-0 ms-2">Top Trending</h5>
-                  </div>
-                 
-
-                   <div>
-                    <a href="./Allgames.html">
-                      <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
-                    </a>
-                   </div>
-               
-              </div>
-  
-              <swiper-container
-      class="mySwiper"
-      space-between="15"
-      loop="true"
-      autoplay-delay="0"
-      autoplay-disable-on-interaction="false"
-      speed="3000"
-      slides-per-view="2.5"
-      centered-slides="false"
-      free-mode="true">
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/d9df7d8216.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button d-flex flex-column">
-                             
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="	https://bc.imgix.net/game/image/12538_Wild%20Bounty%20Showdown.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="	https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-      <swiper-slide>   <div class="game-card-wrapper">
-                          <div class="game-card">
-                              <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
-                                  class="game-card-img" alt="Game 1">
-                          </div>
-                          <div class="game-play-button">
-                              <a href="#" class="btn-play">
-                                  <i class="ri-play-fill"></i>
-                              </a>
-                          </div>
-                      </div></swiper-slide>
-  </swiper-container>
-  
-           </div>
-          <!-- Marquee end -->
-  
-      <!-- Marquee end -->
-
-         <!--------top-games-------->
-         <div>
-          <div class="row">
-           
-
-              <div class="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
-                  <div class="d-flex align-items-center">
-                      <img src="../img/winner.png" alt="" srcset="" width="">   <h5 class="m-0 mt-1 ms-2">Top Matches</h5>
-                  </div>
-                
-
-
-                  <div>
-                    <a href="./Allgames.html">
-                      <span class="text-white fs-13 fw-500 right_heading">All <i class="ri-arrow-right-s-line"></i></span> 
-                    </a> 
-                   </div>
-              </div>
-
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&auto=format&dpr=1.5&w=200"
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200
-                          "
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-
-                <!-- Card 1 -->
-                <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-              <!-- Card 1 -->
-              <div class="col-md-4 col-sm-6 col-6">
-                  <div class="game-card-wrapper">
-                      <div class="game-card">
-                          <img src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&auto=format&dpr=1.5&w=200"
-                              class="game-card-img" alt="Game 1">
-                      </div>
-                      <div class="game-play-button">
-                          <a href="#" class="btn-play">
-                              <i class="ri-play-fill"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <!-- card 1 end -->
-
-              <!-- Repeat cards with the same structure for Card 2, Card 3, and Card 4 -->
-          </div>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="top-picks-games-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#top-picks-games-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="top-picks-games-tab-pane"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <i class="ri-apps-fill pe-1"></i> Top Picks
+            </button>
+          </li>
+        </ul>
       </div>
-      <!-----top-games-end------->
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade active show"
+          id="all-game-tab-pane"
+          role="tabpanel"
+          aria-labelledby="all-game-tab"
+          tabindex="0"
+        >
+          <div>
+            <div class="row mt-4">
+              <!-- <div
+                class="top-matches-title d-flex align-items-center gap-1 my-3 justify-content-between"
+              >
+                <div class="d-flex align-items-center">
+                  <img src="../img/winner.png" alt="" srcset="" width="" />
+                  <h5 class="m-0 mt-1 ms-2">Top Matches</h5>
+                </div>
+  
+                <div>
+                  <a href="./Allgames.html">
+                    <span class="text-white fs-13 fw-500 right_heading"
+                      >All <i class="ri-arrow-right-s-line"></i
+                    ></span>
+                  </a>
+                </div>
+              </div> -->
 
-      <footer>
-        <!-- Footer start -->
-        <!--- footer-sec ----->
-        <div class="footer_section">
-          <footer class="pt-10 pb-12 pb-md-0">
-            <!----provider----->
-            <div class="p-1">
-              <div class="row">
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
                     <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                      src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
                     />
                   </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg"
-                    />
-                  </div>
-                </div>
-                <div class="col-4 px-1">
-                  <div class="game_provider_item">
-                    <img
-                      src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg"
-                    />
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
                   </div>
                 </div>
               </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                            "
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src=" https://bc.imgix.net/game/image/14490_GRAND%20BLUE.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/94252663f8.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15044_NIGHT%20MARKET%202.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/21c76cfd8e.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8263_Double%20Fortune.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8c0fccc803.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/2d1c3f4c95.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/fd46e5de-26bd-48a0-9bab-adc5eaf86fc1.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6372de0529.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/5ba7120462.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15298_20%20Dazzling%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12382_Lucky%20Piggy.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/c8b9f2d69f.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8ad8d38094.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/15338_Burning%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/46926315-cf0d-4371-bc04-7a88e29d8b51.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14857_Sweet%20Candy%20Christmas.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/513d4bbf57.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/38236e7b7d.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/535fb71c85.png?_v=4&auto=format&dpr=2&w=200 	"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/14877_Xmas%20Drop.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/c8b95216be.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/799ca1d303.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12212_Tasty%20Treats.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/70fe4d7666.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
             </div>
-            <!----provider-end-->
-            <div class="container">
-              <div class="d-flex justify-content-center my-3">
-                <div class="logo_brand">
-                  <a class="navbar-brand m-0" href="#"
-                    ><img src="../img/logo.png" alt="" srcset="" width="100%"
-                  /></a>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 p-0">
-                  <div class="footer_section__sports">
-                    <div
-                      class="top-matches-title d-flex align-items-center gap-2 my-3"
-                    >
-                      <h5 class="m-0 mt-1">Jiboomba</h5>
-                    </div>
-                    <p>
-                      A multi-award winning crypto casino. With a player-centric
-                      approach, JIBOOMBA.TOP is able to satisfy millions of
-                      gamblers across the global game..
-                    </p>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="Hot-games-tab-pane"
+          role="tabpanel"
+          aria-labelledby="Hot-games-tab"
+          tabindex="0"
+        >
+          <div>
+            <div class="row mt-4">
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/38236e7b7d.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
                   </div>
-
-                  <div>
-                    <div
-                      class="social-links text-center w-100 justify-content-center my-2"
-                    >
-                      <a href=""><i class="fab fa-facebook-f"></i></a>
-                      <a href=""><i class="fab fa-instagram"></i></a>
-                      <a href=""><i class="fab fa-twitter"></i></a>
-                      <a href=""><i class="fab fa-github"></i></a>
-                      <a href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
                   </div>
                 </div>
               </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/535fb71c85.png?_v=4&auto=format&dpr=2&w=200 	"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15044_NIGHT%20MARKET%202.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src=" https://bc.imgix.net/game/image/14490_GRAND%20BLUE.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                          "
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/94252663f8.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/21c76cfd8e.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8263_Double%20Fortune.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8c0fccc803.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/2d1c3f4c95.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/fd46e5de-26bd-48a0-9bab-adc5eaf86fc1.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6372de0529.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/5ba7120462.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15298_20%20Dazzling%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12382_Lucky%20Piggy.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/c8b9f2d69f.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8ad8d38094.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/15338_Burning%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/46926315-cf0d-4371-bc04-7a88e29d8b51.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14857_Sweet%20Candy%20Christmas.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/513d4bbf57.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/14877_Xmas%20Drop.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/c8b95216be.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/799ca1d303.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12212_Tasty%20Treats.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/70fe4d7666.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
             </div>
-          </footer>
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-12">
-              <div class="copy_right">
-                <p>
-                  Copyright © 2024 jiboomba <br />
-                  All rights are reserved and protected by law
-                </p>
+        <div
+          class="tab-pane fade"
+          id="slots-games-tab-pane"
+          role="tabpanel"
+          aria-labelledby="Hot-games-tab"
+          tabindex="0"
+        >
+          <div>
+            <div class="row mt-4">
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/799ca1d303.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12212_Tasty%20Treats.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/70fe4d7666.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src=" https://bc.imgix.net/game/image/14490_GRAND%20BLUE.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                          "
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/94252663f8.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15044_NIGHT%20MARKET%202.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/21c76cfd8e.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8263_Double%20Fortune.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8c0fccc803.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/2d1c3f4c95.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/fd46e5de-26bd-48a0-9bab-adc5eaf86fc1.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6372de0529.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/5ba7120462.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15298_20%20Dazzling%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12382_Lucky%20Piggy.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/c8b9f2d69f.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8ad8d38094.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/15338_Burning%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/46926315-cf0d-4371-bc04-7a88e29d8b51.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14857_Sweet%20Candy%20Christmas.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/513d4bbf57.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/38236e7b7d.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/535fb71c85.png?_v=4&auto=format&dpr=2&w=200 	"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/14877_Xmas%20Drop.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/c8b95216be.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="live-casino-games-tab-pane"
+          role="tabpanel"
+          aria-labelledby="live-casino-games-tab"
+          tabindex="0"
+        >
+          <div>
+            <div class="row mt-4">
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/94252663f8.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src=" https://bc.imgix.net/game/image/14490_GRAND%20BLUE.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/46926315-cf0d-4371-bc04-7a88e29d8b51.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14857_Sweet%20Candy%20Christmas.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/513d4bbf57.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12212_Tasty%20Treats.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/70fe4d7666.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                          "
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15044_NIGHT%20MARKET%202.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/21c76cfd8e.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8263_Double%20Fortune.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8c0fccc803.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/2d1c3f4c95.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/fd46e5de-26bd-48a0-9bab-adc5eaf86fc1.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6372de0529.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/5ba7120462.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15298_20%20Dazzling%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12382_Lucky%20Piggy.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/c8b9f2d69f.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8ad8d38094.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/15338_Burning%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/38236e7b7d.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/535fb71c85.png?_v=4&auto=format&dpr=2&w=200 	"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/14877_Xmas%20Drop.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/c8b95216be.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/799ca1d303.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="Providers-games-tab-pane"
+          role="tabpanel"
+          aria-labelledby="Providers-games-tab"
+          tabindex="0"
+        >
+          <div class="pb-5">
+            <div class="row pb-5 mt-4">
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/evolution.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/4rabet_exclusive.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/smartsoft.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/aviatrix.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/threeoaks.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/ezugi.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/betgames.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/pgsoft.svg"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game_provider_item">
+                  <img
+                    src="https://ifrd.4rabet4.com/img/main/providers/banners/spribe.svg"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!--- footer-sec-end ----->
-        <!-- Footer end -->
-      </footer>
+        <div
+          class="tab-pane fade"
+          id="top-picks-games-tab-pane"
+          role="tabpanel"
+          aria-labelledby="top-picks-games-tab"
+          tabindex="0"
+        >
+          <div>
+            <div class="row mt-4">
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/14877_Xmas%20Drop.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/c8b95216be.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/799ca1d303.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14411_Magic Lamp Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13478_Super Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/575c0384-6a0f-4095-b958-9932ea5cdc7f.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12159_Money%20Coming.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13476_Fortune%20Bingo.png?_v=4&auto=format&dpr=1.5&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src=" https://bc.imgix.net/game/image/14490_GRAND%20BLUE.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/94252663f8.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15044_NIGHT%20MARKET%202.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6c55a75b6c.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/13474_iRich%20Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200
+                          "
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/13481_Lucky Bingo.png?_v=4&amp;auto=format&amp;dpr=1.5&amp;w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/21c76cfd8e.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8263_Double%20Fortune.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8c0fccc803.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/2d1c3f4c95.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/fd46e5de-26bd-48a0-9bab-adc5eaf86fc1.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/6372de0529.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/5ba7120462.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/15298_20%20Dazzling%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12382_Lucky%20Piggy.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/c8b9f2d69f.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/8ad8d38094.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/15338_Burning%20Hot.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/46926315-cf0d-4371-bc04-7a88e29d8b51.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/14857_Sweet%20Candy%20Christmas.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/513d4bbf57.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/38236e7b7d.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/315948b7fb.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="	https://bc.imgix.net/game/image/535fb71c85.png?_v=4&auto=format&dpr=2&w=200 	"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/12212_Tasty%20Treats.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+              <!-- Card 1 -->
+              <div class="col-md-4 col-sm-4 col-4 px-1">
+                <div class="game-card-wrapper">
+                  <div class="game-card">
+                    <img
+                      src="https://bc.imgix.net/game/image/70fe4d7666.png?_v=4&auto=format&dpr=2&w=200"
+                      class="game-card-img"
+                      alt="Game 1"
+                    />
+                  </div>
+                  <div class="game-play-button">
+                    <a href="#" class="btn-play">
+                      <i class="ri-play-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card 1 end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tab nav Ends -->
+
+
+
+
+      
+
+
     </section>
 
    
@@ -522,82 +3963,41 @@ input:not(:placeholder-shown) ~ .reset {
            <!-- Footer Navigation -->
            <div class="unique-footer" style="bottom: 0px">
             <ul>
-              <li
-                id="unique-home"
-                class="footer-item"
-                onclick="activateFooterItem('unique-home')"
-              >
+              <li id="unique-home" class="footer-item" onclick="activateFooterItem('unique-home')">
                 <a href="./index.html">
-                  <img
-                    src="../img/footer/home (3).png"
-                    alt=""
-                    srcset=""
-                    width="27px"
-                  />
+                  <img src="../img/footer/home (3).png" alt="" srcset="" width="27px">
                   <p class="mb-0">Home</p>
                 </a>
               </li>
       
-              <li
-                id="unique-games"
-                class="footer-item"
-                onclick="activateFooterItem('unique-games')"
-              >
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
                 <a href="./Allgames.html">
-                  <img
-                    src="../img/footer/search_1.png"
-                    alt=""
-                    srcset=""
-                    width="27px"
-                  />
+                  <img src="../img/footer/search_1.png" alt="" srcset="" width="27px">
                   <p class="mb-0">Search</p>
                 </a>
               </li>
       
-              <li
-                id="unique-games"
-                class="footer-item"
-                onclick="activateFooterItem('unique-games')"
-              >
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
                 <a href="./Allgames.html">
-                  <img
-                    src="../img/footer/game (1).png"
-                    alt=""
-                    srcset=""
-                    width="27px"
-                  />
-                  <p class="mb-0">Games</p>
-                </a>
-              </li>
-              <li
-                id="unique-games"
-                class="footer-item"
-                onclick="activateFooterItem('unique-games')"
-              >
-                <a href="./Allgames.html">
-                  <img
-                    src="../img/footer/casino_1.png"
-                    alt=""
-                    srcset=""
-                    width="27px"
-                  />
+                  <img src="../img/footer/casino_1.png" alt="" srcset="" width="27px">
                   <p class="mb-0">Casino</p>
                 </a>
               </li>
-              <li
-                id="unique-settings"
-                class="footer-item"
-                onclick="activateFooterItem('unique-settings')"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#menuOffcanva"
-                aria-controls="menuOffcanva"
-              >
-
-              <a href="#">
-                <img src="../img/footer/app.png" alt="" srcset="" width="27px" />
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/game (1).png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Sports</p>
+                </a>
+              </li>
+              <!-- <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/casino_1.png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Casino</p>
+                </a>
+              </li> -->
+              <li id="unique-settings" class="footer-item" onclick="activateFooterItem('unique-settings')" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanva" aria-controls="menuOffcanva">
+                <img src="../img/footer/app.png" alt="" srcset="" width="27px">
                 <p class="mb-0">Menu</p>
-              </a>
-              
               </li>
             </ul>
           </div>
@@ -3511,7 +6911,7 @@ input:not(:placeholder-shown) ~ .reset {
 
   <!-- js part end -->
 
-  <script>
+  <!-- <script>
 
 document.addEventListener('scroll', () => {
 const footer = document.querySelector('.unique-footer');
@@ -3526,7 +6926,7 @@ if (scrollY > 100) { // Adjust threshold as needed
 
 
 
-  </script>
+  </script> -->
 <script>
   const offcanvasStack = [];
   
@@ -3678,6 +7078,21 @@ if (scrollY > 100) { // Adjust threshold as needed
   withdrawButton.addEventListener('click', () => setActiveButton(withdrawButton));
 </script>
 <!--  -->
+
+<script>
+  const header = document.querySelector(".page-header");
+const toggleClass = "is-sticky";
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > 150) {
+    header.classList.add(toggleClass);
+  } else {
+    header.classList.remove(toggleClass);
+  }
+});
+
+</script>
 </body>
 
 </html>
