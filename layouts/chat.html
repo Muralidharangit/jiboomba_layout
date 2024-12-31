@@ -341,45 +341,49 @@ input.form-control.bg-white.text-dark {
  
 
 
-     <!-- Fixed Footer start -->
+<!-- Fixed Footer start -->
            <!-- Footer Navigation -->
-           <div class="unique-footer">
+           <div class="unique-footer" style="bottom: 0px">
             <ul>
-                <li id="unique-home" class="footer-item" onclick="activateFooterItem('unique-home')">
-                    <!-- <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M12 3l10 9h-6v7h-8v-7h-6z"/>
-                    </svg> -->
-                  
-                    <img src="../img/footer/home.png" alt="" srcset="" width="34px">
-                  
-
-                
-
-                    
-                  
-                </li>
-                <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
-                    <!-- <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M4 10h16v4h-16z"/>
-                    </svg> -->
-
-                    <img src="../img/footer/game (1).png" alt="" srcset="" width="34px">
-                   
-                </li>
-                <li id="unique-settings" class="footer-item" onclick="activateFooterItem('unique-settings')">
-                    <!-- <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M12 4a8 8 0 0 1 8 8v4a8 8 0 1 1-16 0v-4a8 8 0 0 1 8-8zm0 10a2 2 0 0 0 2-2v-4a2 2 0 1 0-4 0v4a2 2 0 0 0 2 2z"/>
-                    </svg> -->
-                    <a href="http://" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                    <img src="../img/footer/app.png" alt="" srcset="" width="34px">
-                    </a>
-                   
-                </li>
+              <li id="unique-home" class="footer-item" onclick="activateFooterItem('unique-home')">
+                <a href="./index.html">
+                  <img src="../img/footer/home (3).png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Home</p>
+                </a>
+              </li>
+      
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/search_1.png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Search</p>
+                </a>
+              </li>
+      
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/casino_1.png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Casino</p>
+                </a>
+              </li>
+              <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/game (1).png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Sports</p>
+                </a>
+              </li>
+              <!-- <li id="unique-games" class="footer-item" onclick="activateFooterItem('unique-games')">
+                <a href="./Allgames.html">
+                  <img src="../img/footer/casino_1.png" alt="" srcset="" width="27px">
+                  <p class="mb-0">Casino</p>
+                </a>
+              </li> -->
+              <li id="unique-settings" class="footer-item" onclick="activateFooterItem('unique-settings')" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanva" aria-controls="menuOffcanva">
+                <img src="../img/footer/app.png" alt="" srcset="" width="27px">
+                <p class="mb-0">Menu</p>
+              </li>
             </ul>
-        </div>
-    
-        <!-- Footer Navigation -->
+          </div>
+<!-- Footer Navigation -->
             <!-- footer end -->
 
 
@@ -390,13 +394,13 @@ input.form-control.bg-white.text-dark {
   class="offcanvas offcanvas_bg offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
-  id="offcanvasWithBothOptions"
-  aria-labelledby="offcanvasWithBothOptionsLabel"
+  id="menuOffcanva"
+  aria-labelledby=" menuOffcanvaLabel"
 >
   <div class="offcanvas-header d-flex justify-content-between">
     <h5
       class="offcanvas-title fs-24 mx-2"
-      id="offcanvasWithBothOptionsLabel"
+      id=" menuOffcanvaLabel"
     >
       Menu
     </h5>
@@ -410,18 +414,36 @@ input.form-control.bg-white.text-dark {
     </button>
   </div>
   <div class="offcanvas-body">
-    <div class="d-flex align-items-center menu_list_item">
+    <a href="./index.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+      
       <div class="">
-        <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24" />
+        <img src="../img/SIDEMENU/home.png" alt="" srcset="" width="24">
+        <span class="mx-3 text-white">Home</span>
       </div>
-      <span class="mx-3 text-white">Home</span>
+   
+      
+
+
+        <!-- <div class="icon-box">
+                <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
     </div>
-    <div class="d-flex align-items-center menu_list_item">
+  </a>
+    <a href="./Allgames.html">
+    <div class="d-flex align-items-center menu_list_item justify-content-between">
+     
       <div class="">
         <img src="../img/SIDEMENU/club.png" alt="" srcset="" width="24" />
+        <span class="mx-3 text-white">All Games</span>
       </div>
-      <span class="mx-3 text-white">All Games</span>
+
+      <!-- <div class="icon-box">
+        <i class="ri-arrow-right-s-line text-white"></i>
+      </div> -->
+     
     </div>
+    </a>
 
     <!----accordion---->
     <div class="accordion accordion_sec" id="accordionExample">
@@ -454,9 +476,9 @@ input.form-control.bg-white.text-dark {
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 1</span>
+              <span class="mx-3 text-white">Spribe</span>
             </div>
           </div>
           <div class="accordion-body game_items_accordion">
@@ -464,9 +486,9 @@ input.form-control.bg-white.text-dark {
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 2</span>
+              <span class="mx-3 text-white">Turbo Games</span>
             </div>
           </div>
           <div class="accordion-body game_items_accordion">
@@ -474,9 +496,9 @@ input.form-control.bg-white.text-dark {
               class="d-flex align-items-center game_items_accordion_list"
             >
               <div class="">
-                <i class="ri-gamepad-line text-white"></i>
+                <img src="../img/two-arrows.png" alt="" srcset="" width="22">
               </div>
-              <span class="mx-3 text-white">Casino 3</span>
+              <span class="mx-3 text-white">Game Hub</span>
             </div>
           </div>
         </div>
@@ -485,7 +507,8 @@ input.form-control.bg-white.text-dark {
     <!----accordion end---->
     <div class="menu">
       <!-- Main -->
-      <div class="d-flex align-items-center menu_list_item">
+       <a href="./howtoplay.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
         <div>
           <img
             src="../img/SIDEMENU/mode-portrait.png"
@@ -493,39 +516,88 @@ input.form-control.bg-white.text-dark {
             srcset=""
             width="24"
           /><!-- Icon for "Main" -->
+          <span class="mx-3 text-white">How to Play</span>
         </div>
-        <span class="mx-3 text-white">How to Play</span>
+<!-- 
+        <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div>
+         -->
       </div>
-
+       </a>
       <!-- LIVE -->
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/deposit.png"
-            alt=""
-            srcset=""
-            width="24"
-          /><!-- Icon for "LIVE" -->
-        </div>
-         <span class="mx-3 text-white">Term & Condition</span>
+      <a href="./terms&condition.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/deposit.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Term & Condition</span>
+  
+          </div>
+        
+       
+        
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
+    </a>
+       <!-- LIVE -->
+       <a href="./Bonus.html">
+       <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/icons/gift.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "LIVE" -->
+  
+            <span class="mx-3 text-white">Bonus</span>
+  
+          </div>
+      
+       
+        
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
+      </div>
+    </a>
 
       <!-- Sports -->
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/money-from-bracket.png"
-            alt=""
-            srcset=""
-            width="24"
-          />
-          <!-- Existing "Sports" Icon -->
-        </div>
-         <span class="mx-3 text-white">Privacy Policy</span>
+      <a href="./privacy_policy.html">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        
+          <div>
+            <img
+              src="../img/SIDEMENU/money-from-bracket.png"
+              alt=""
+              srcset=""
+              width="24"
+            />
+            <!-- Existing "Sports" Icon -->
+            <span class="mx-3 text-white">Privacy Policy</span>
+          </div>
+         
+        
+       
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
 
+    </a>
       <!-- Cricket -->
-      <div class="d-flex align-items-center menu_list_item">
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
         <div>
           <img
             src="../img/SIDEMENU/settings.png"
@@ -533,20 +605,33 @@ input.form-control.bg-white.text-dark {
             srcset=""
             width="24"
           /><!-- Icon for "Cricket" -->
+          <span class="mx-3 text-white">Settings</span>
         </div>
-        <span class="mx-3 text-white">Settings</span>
+       
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
 
-      <div class="d-flex align-items-center menu_list_item">
-        <div>
-          <img
-            src="../img/SIDEMENU/address-card.png"
-            alt=""
-            srcset=""
-            width="24"
-          /><!-- Icon for "Cricket" -->
-        </div>
-        <span class="mx-3 text-white">Logout</span>
+      <div class="d-flex align-items-center menu_list_item justify-content-between">
+        <a href="./index_logout.html">
+          <div>
+            <img
+              src="../img/SIDEMENU/address-card.png"
+              alt=""
+              srcset=""
+              width="24"
+            /><!-- Icon for "Cricket" -->
+            <span class="mx-3 text-white">Logout</span>
+          </div>
+        </a>
+       
+        
+
+        <!-- <div class="icon-box">
+          <i class="ri-arrow-right-s-line text-white"></i>
+        </div> -->
       </div>
     </div>
   </div>
